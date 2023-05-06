@@ -14,6 +14,7 @@ maestros
 		preparado
 		organizado
 		
+		
 
 	alumno compatible -> busca
 		responsabilidad 
@@ -37,7 +38,7 @@ estudiantes
 		entusiasmo
 		participacion
 		curiosidad
-		puntual
+		puntualE
 		
 
 	metodología -> busca
@@ -55,3 +56,6 @@ estudiantes
 		organizado
 				
 	
+
+RELACION
+MATCH (p:Profesor{name:"Douglas Colonias"}) CREATE (c:Cualidad {name:"Organizado"}) CREATE (p)-[:TIENE]->(c)
