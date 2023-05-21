@@ -1,0 +1,61 @@
+maestros
+	curso -> ensena
+	nombre 
+	metodología -> imparte
+		tradicional 
+		dinamica
+		magistral
+	Cualidades -> tiene
+		estricto
+		flexible
+		empatico
+		ambiente de armonia
+		dominio del tema
+		preparado
+		organizado
+		
+		
+
+	alumno compatible -> busca
+		responsabilidad 
+		entusiasmo
+		participacion
+		curiosidad
+		puntual		
+
+	info extra
+		reprobados
+		cursos y ciclos
+		maestros por horario
+
+
+
+estudiantes
+	curso -> recibio/recibe
+	nombre
+	cualidades -> tiene
+		responsabilidad 
+		entusiasmo
+		participacion
+		curiosidad
+		puntualE
+		
+
+	metodología -> busca
+		tradicional 
+		dinamica
+		magistral
+	
+	busca (cualidades) -> busca
+		estricto
+		flexible
+		empatico
+		ambiente de armonia
+		dominio del tema
+		preparado
+		organizado
+				
+	
+
+RELACION
+MATCH (p:Profesor{name:"Douglas Colonias"}) CREATE (c:Cualidad {name:"Organizado"}) CREATE (p)-[:TIENE]->(c)

@@ -1,0 +1,62 @@
+<!-- .pop
+css/estilo.css
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="C://xampp//htdocs//proyecto-2-xd//Programa Recomendaciones//css//estilo.css">
+    <link rel="stylesheet" href="../Programa Recomendaciones/css/estilo.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+
+    
+    
+    <title>LOGIN</title>
+</head>
+<body><center>
+    <!--{% if msg %}
+    <p class="msg">{{msg}}</p>
+    {% endif %}-->
+
+
+    <div class="container">
+        <div class="row justify-content-center pt-5 mt-5 mr-1">
+            <div class="col-md-4 formulario">
+
+                <form action="/form" method="POST">
+
+
+                    <!--<img src="../Programa Recomendaciones/img/logo5.jpg">-->
+     
+                    <div class="form-group text-center pt-3">
+                        <h1 class="text-light">UVG+</h1>
+                        <h4 class="text-light">(profesor's version)</h4><br>
+                        <h1 class="text-light">Iniciar Sesión </h1><br>
+                    </div>  
+                    <div class="form-group mx-sm-4 pt-2">
+                        <input type="text" requiered name="nombre" class="form-control" placeholder="Ingrese su correo institucional"><br>
+                    </div>  
+                    <div class="form-group mx-sm-4 pb-3">
+                        <input type="password" requiered name="contrasena" class="form-control" placeholder="Ingrese su contraseña"><br>
+                    </div>  
+                    <div class="form-group mx-sm-5 pb-3">
+                        <input type="submit" class="btn btn-block ingresar" value="ㅤㅤㅤIngresarㅤㅤㅤ"><br>
+                    </div> 
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    
+    
+</body>
+</html>

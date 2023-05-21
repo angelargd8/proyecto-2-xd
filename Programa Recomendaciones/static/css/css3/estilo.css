@@ -1,0 +1,34 @@
+body{
+    background-image: url(../img/wallpaper10.jpg);
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+.formulario{
+    background-color: rgba(228, 27, 34, 0.829);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, -0, 0, -0.568);
+    color: white;
+    padding: 19px;
+}
+.form-control::placeholder{
+    color: rgba(0, 0, 0, 0.842);
+}
+
+
+.ingresar {
+    background-color: rgb(242, 232, 233);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700!important;
+    box-shadow: 0 0 30px rgba(0, -0, 0, -0.568);
+    transition: 0.5s ease-in;
+}
+
+.ingresar:hover{
+    color:red;
+}
+
