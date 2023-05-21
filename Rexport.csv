@@ -1,0 +1,11 @@
+﻿n,r,m
+"(:Clase {name: ""Calculo1""})",[:Da],"(:Profesor {name: ""Aristondo""})"
+"(:Clase {name: ""Calculo1""})",[:Da],"(:Profesor {name: ""Ronald""})"
+"(:Profesor {name: ""Aristondo""})",[:Tiene],"(:Cualidad {name: ""Organizacion""})"
+"(:Profesor {name: ""Ronald""})",[:Tiene],"(:Cualidad {name: ""Organizacion""})"
+"(:Profesor {name: ""Ronald""})",[:Tiene],"(:Cualidad {name: ""Amable""})"
+"(:Profesor {name: ""Ronald""})",[:Tiene],"(:Cualidad {name: ""Dominio Tema""})"
+"(:Profesor {name: ""Aristondo""})",[:Tiene],"(:Cualidad {name: ""Dominio Tema""})"
+"(:Estudiante {correo: ""pin22880@uvg.edu.gt"",name: ""Gerardo"",contra: ""123""})",[:Tiene],"(:Cualidad {name: ""Organizacion""})"
+"(:Estudiante {correo: ""pin22880@uvg.edu.gt"",name: ""Gerardo"",contra: ""123""})",[:Tiene],"(:Cualidad {name: ""Amable""})"
+"(:Estudiante {correo: ""gar22869@uvg.edu.gt"",name: ""Angela"",contra: ""123""})",[:Tiene],"(:Cualidad {name: ""Amable""})"

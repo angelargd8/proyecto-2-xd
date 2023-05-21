@@ -31,6 +31,7 @@ class Neo4JExample:
 #Aqui tienen que cambiar a su ruta de la carpeta raíz
 app = Flask(__name__,template_folder= 'C:\\Users\\USUARIO\\Desktop\\Proyecto2Github\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
 BD = Neo4JExample("bolt://localhost:7687", "neo4j", "12345678")
+#neo4j,neo4j
 
 @app.route('/') #se define un temporador para la ruta principal '/login'
 
@@ -51,7 +52,7 @@ def Form():
     
     if(ret[0] == "No existe"):
         #Aqui se tiene que poner un alert o algo no se como se hace
-        return "<h1>binvenido El usuario ingresado no existe </h1>"
+        return "<h1>El usuario ingresado no existe </h1>"
     else:
         if(ret[0] == nombre and contrasena == ret[1]):
             #Tal ve aqui darle acceso a alguna otra pantalla como un menu

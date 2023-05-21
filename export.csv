@@ -1,0 +1,9 @@
+﻿n
+"(:Estudiante {correo: ""pin22880@uvg.edu.gt"",name: ""Gerardo"",contra: ""123""})"
+"(:Clase {name: ""Calculo1""})"
+"(:Profesor {name: ""Ronald""})"
+"(:Profesor {name: ""Aristondo""})"
+"(:Cualidad {name: ""Amable""})"
+"(:Cualidad {name: ""Organizacion""})"
+"(:Cualidad {name: ""Dominio Tema""})"
+"(:Estudiante {correo: ""gar22869@uvg.edu.gt"",name: ""Angela"",contra: ""123""})"
