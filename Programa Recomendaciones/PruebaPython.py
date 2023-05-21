@@ -40,8 +40,15 @@ class Neo4JExample:
 
     @staticmethod
     def showUsers(tx):
-        result = tx.run("match (u:Usuario) return u.name")
-        return [record['u.name'] for record in result]
+        result = tx.run("MATCH (estudiante:Estudiante {name: 'Gerardo'})-[:Tiene]->(c:Cualidad) WITH estudiante, COLLECT(DISTINCT c) AS estudianteCualidades MATCH (clase:Clase {name: 'Calculo1'})-[:Da]->(profesor:Profesor)-[:Tiene]->(c:Cualidad) WITH estudiante, estudianteCualidades, profesor, COLLECT(DISTINCT c) AS profesorCualidades RETURN estudiante.name AS estudiante, profesor.name AS profesor, SIZE([x IN estudianteCualidades WHERE x IN profesorCualidades]) AS similitud ORDER BY similitud DESC")
+        for record in result:
+            from_name = record["estudiante"]
+            print(from_name)
+            to_name = record["profesor"]
+            print(to_name)
+            similarity = record["similitud"]
+            print(similarity)
+        return "ya"
         #return result.single()[0]
     
     @staticmethod

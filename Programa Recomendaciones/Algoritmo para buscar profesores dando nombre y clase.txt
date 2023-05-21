@@ -1,0 +1,12 @@
+                              //Solo se pide nombre de la persona
+MATCH (estudiante:Estudiante {name: "Gerardo"})-[:Tiene]->(c:Cualidad)
+WITH estudiante, COLLECT(DISTINCT c) AS estudianteCualidades
+
+              //Aqui la flecha que sale de [:Da] si cambia de direccion significa que el profesor de la clase
+             //En este caso esta diciendo que calculo1 da al profesor
+                   //Clase que busca
+MATCH (clase:Clase {name: "Calculo1"})-[:Da]->(profesor:Profesor)-[:Tiene]->(c:Cualidad)
+WITH estudiante, estudianteCualidades, profesor, COLLECT(DISTINCT c) AS profesorCualidades
+RETURN estudiante.name AS estudiante, profesor.name AS profesor, SIZE([x IN estudianteCualidades WHERE x IN profesorCualidades]) AS similitud
+ORDER BY similitud DESC
+LIMIT 1
