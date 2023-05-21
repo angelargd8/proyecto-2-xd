@@ -6,12 +6,11 @@ import csv
 class app(Tk):
     def __init__(self):
         Tk.__init__(self)
-        self.geometry("500x200")
+        self.geometry("100x100")
         self.configure(bg="blueviolet")
-        Button(text="ver",command=self.showUsers).place(x=0,y=5)
-        Button(text="Crear",command=self.createUser).place(x=0,y=45)
-        Button(text="Poner en neo4j",command=self.poner).place(x=0,y=60)
-        self.c1 = Entry(); self.c1.place(x=100,y=45)
+        #Button(text="ver",command=self.showUsers).place(x=0,y=5)
+        Button(text="Crear",command=self.createUser).place(x=0,y=5)
+        Button(text="Poner en neo4j",command=self.poner).place(x=0,y=40)
 
         self.BD = Neo4JExample("bolt://localhost:7687", "neo4j", "12345678")
 
@@ -55,7 +54,10 @@ class Neo4JExample:
 
         with self.driver.session() as session:
             for node in nodes:
-                query = "CREATE (n:{}) SET n = {}".format(node["labels"], node["properties"])
+                labels = node["labels"]
+                properties = node["properties"]
+
+                query = "CREATE (n:{}) SET n = {}".format(labels, properties)
                 session.run(query)
 
         with self.driver.session() as session:
