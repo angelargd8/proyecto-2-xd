@@ -1,0 +1,11 @@
+relationship_id,start_node_id,end_node_id,type,properties
+0,1,3,Da,{}
+1,1,2,Da,{}
+2,3,5,Tiene,{}
+3,2,5,Tiene,{}
+4,2,4,Tiene,{}
+5,2,6,Tiene,{}
+6,3,6,Tiene,{}
+7,0,5,Tiene,{}
+8,0,4,Tiene,{}
+9,7,4,Tiene,{}

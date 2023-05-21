@@ -1,0 +1,9 @@
+node_id,labels,properties
+0,['Estudiante'],"{'correo': 'pin22880@uvg.edu.gt', 'name': 'Gerardo', 'contra': '123'}"
+1,['Clase'],{'name': 'Calculo1'}
+2,['Profesor'],{'name': 'Ronald'}
+3,['Profesor'],{'name': 'Aristondo'}
+4,['Cualidad'],{'name': 'Amable'}
+5,['Cualidad'],{'name': 'Organizacion'}
+6,['Cualidad'],{'name': 'Dominio Tema'}
+7,['Estudiante'],"{'correo': 'gar22869@uvg.edu.gt', 'name': 'Angela', 'contra': '123'}"
