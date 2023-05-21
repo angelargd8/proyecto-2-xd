@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/*arriba y abajo, para el espacio*/
+.altura-a-b{
+    padding: 150px;
+
+}
+
+.footer{
+    background-color: #e41b22;
+    padding: 100px 0;
+    text-align: center;
+}
