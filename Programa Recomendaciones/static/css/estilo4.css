@@ -21,6 +21,15 @@ body{
     color: white;
     padding: 20px;
 }
+
+.formulario2{
+    background-color: rgba(26, 110, 95, 0.795);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, -0, 0, -0.568);
+    color: white;
+    padding: 40px;
+}
 .form-control::placeholder{
     color: rgba(0, 0, 0, 0.842);
 }

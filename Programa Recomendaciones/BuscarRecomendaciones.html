@@ -100,12 +100,41 @@
       <section class="altura-a-b">
 
         <div class="container">
+          <div class="row justify-content-center pt-5 mt-5 mr-1">
+              <div class="col-md-4 formulario2">
+  
+                  <form action="/" method="POST">
+        
+       
+                      <div class="form-group text-center pt-3">
+                          
+                          <h1 class="text-light">Escoger la clase </h1><br>
+                      </div>  
+                      <div class="form-group mx-sm-4 pt-2">
+                          <input type="text" requiered name="nombre" class="form-control" placeholder="Ingrese la clase"><br>
+                      </div>  
+                       
+                     
+                      
+                  </form>
+                  <form action="/form2" method="POST">
+                      <div class="form-group mx-sm-5 pb-3">
+                          <input type="submit" class="btn btn-block ingresar" value="ㅤㅤㅤEnviarㅤㅤㅤ"><br>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+        
+
+
+        <div class="container">
             <div class="row">
   
               <div class="col-12 col-sm-6">
               
                 <div class="card" style="width: 25rem;">
-                    <img class="card-img-top" src="../Programa Recomendaciones/static/img/man.png" alt="Card image cap">
+                    <img class="card-img-top" src="{{ url_for('static', filename='img/man.png') }}" alt="Card image cap">
                     <div id ="container"class="card-body">
                       <script>
                         
@@ -122,7 +151,7 @@
               <div class="col-12 col-sm-6 text-left">
                 
                 <div class="card" style="width: 25rem;">
-                    <img class="card-img-top" src="../Programa Recomendaciones/static/img/teacher.png" alt="Card image cap">
+                    <img class="card-img-top" src="{{ url_for('static', filename='img/teacher.png') }}" alt="Card image cap">
                     <div id="container2" class="card-body">
                       <script>
                         
@@ -147,7 +176,7 @@
                 <div class="col-12 col-sm-6">
                 
                   <div class="card" style="width: 25rem;">
-                      <img class="card-img-top" src="../Programa Recomendaciones/static/img/teacher2.png" alt="Card image cap">
+                      <img class="card-img-top" src="{{ url_for('static', filename='img/teacher2.png') }}"  alt="Card image cap">
                       <div id="container3" class="card-body">
                         <script>
                         
@@ -164,7 +193,7 @@
                 <div class="col-12 col-sm-6 text-left">
                   
                   <div class="card" style="width: 25rem;">
-                      <img class="card-img-top" src="../Programa Recomendaciones/static/img/teacher2.png" alt="Card image cap">
+                      <img class="card-img-top" src="{{ url_for('static', filename='img/teacher.png') }}"  alt="Card image cap">
                       <div id="container4" class="card-body">
                         <script>
                         
@@ -202,7 +231,7 @@
 
             <div class="col-12 col-sm-6">
             
-              <img src="../Programa Recomendaciones/static/img/logo5.jpg" alt="logo">              
+              <img src="{{ url_for('static', filename='img/logo5.jpg') }}" alt="logo">              
             </div>
             <div class="col-12 col-sm-6 text-left">
               <br>
