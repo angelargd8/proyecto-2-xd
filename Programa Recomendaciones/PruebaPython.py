@@ -51,7 +51,9 @@ class Neo4JExample:
         with open("relationships.csv", mode="r") as file:
             relationship_reader = csv.DictReader(file)
             relationships = list(relationship_reader)
-
+        with self.driver.session() as session:
+                query = "match (n) detach delete n"
+                session.run(query)
         with self.driver.session() as session:
             for node in nodes:
                 labels = node["labels"]

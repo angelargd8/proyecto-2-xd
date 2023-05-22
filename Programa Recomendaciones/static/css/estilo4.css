@@ -1,3 +1,10 @@
+@charset "UTF-8";
+
+/*arriba y abajo, para el espacio*/
+.altura-a-b{
+    padding: 150px;
+
+}
 body{
     background-image: url(../img/wallpaper3.jpg);
     background-repeat: no-repeat ;
@@ -7,12 +14,12 @@ body{
 }
 
 .formulario{
-    background-color: rgba(228, 27, 34, 0.829);
+    background-color: rgba(26, 110, 95, 0.795);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(0, -0, 0, -0.568);
     color: white;
-    padding: 19px;
+    padding: 20px;
 }
 .form-control::placeholder{
     color: rgba(0, 0, 0, 0.842);
@@ -29,6 +36,11 @@ body{
 }
 
 .ingresar:hover{
-    color:red;
+    color:rgb(1, 138, 7);
 }
 
+.footer{
+    background-color: rgba(26, 110, 95, 0.795);
+    padding: 100px 0;
+    text-align: center;
+}
