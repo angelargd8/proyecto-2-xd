@@ -31,7 +31,7 @@ class Neo4JExample:
 #Aqui tienen que cambiar a su ruta de la carpeta raíz
 #path Gerax: C:\\Users\\USUARIO\\Desktop\\Proyecto2Github\\proyecto-2-xd\\Programa Recomendaciones
 #path Angela: C:\\xampp\\htdocs\\proyecto-2-xd\\Programa Recomendaciones
-app = Flask(__name__,template_folder= 'C:\\xampp\\htdocs\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
+app = Flask(__name__,template_folder= 'C:\\Users\\USUARIO\\Desktop\\Proyecto2Github\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
 BD = Neo4JExample("bolt://localhost:7687", "neo4j", "12345678")
 #neo4j,neo4j
 
@@ -41,6 +41,9 @@ def inicio():
     #renderizamos la plantilla, formulario html
     return render_template('index.html')
 
+@app.route('/form2', methods=['POST'])
+def Form2():
+    return render_template('PrimerIngreso.html')
 
 #se define el route con el metodo post
 @app.route('/form', methods=['POST'])
