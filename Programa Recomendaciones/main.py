@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 from neo4j import GraphDatabase
+import json
 
 class Neo4JExample:
 
@@ -107,7 +108,11 @@ def buscarRecomendacion():
         
     if(flagExistencia):
         arrProfesor = BD.callProfesorRecom(nombre, clase)
-        return render_template('BuscarRecomendaciones.html',busqueda = True, nombre = nombre, contrasena = contrasena, arrProfesor = arrProfesor)
+        nombreProfe = []
+        for x in arrProfesor:
+            nombreProfe.append(x[1])
+        #Por el momento y como esta hecha la base de datos solo manda dos profesores porque solo llega a 2
+        return render_template('BuscarRecomendaciones.html',busqueda = True, nombre = nombre, contrasena = contrasena, profe1 = nombreProfe[0], profe2 = nombreProfe[1])
     else:
         return render_template('BuscarRecomendaciones.html',flagError = True, mensaje = "La clase que ingreso no existe", nombre = nombre, contrasena = contrasena)
     
