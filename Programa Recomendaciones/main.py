@@ -47,6 +47,7 @@ class Neo4JExample:
 #path Gerax: C:\\Users\\USUARIO\\Desktop\\Proyecto2Github\\proyecto-2-xd\\Programa Recomendaciones
 #path Angela: C:\\xampp\\htdocs\\proyecto-2-xd\\Programa Recomendaciones
 #path Diego: C:\\Users\\dgv31\\OneDrive\\Documents\\Universidad\\Semestre 3\\estructura de datos\\Proyecto 2\\Programa Recomendaciones
+
 app = Flask(__name__,template_folder= 'C:\\xampp\\htdocs\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
 BD = Neo4JExample("bolt://localhost:7687", "neo4j", "12345678")
 #neo4j,neo4j
@@ -62,20 +63,30 @@ def Form2():
     return render_template('PrimerIngreso.html')
 
 #cambiar
+
 @app.route('/menu', methods=['POST'])
-def Redireccion1():
-    return render_template('menu_principal.html')
+def menu():
+    nombre = request.form['nombre']
+    contrasena = request.form['contrasena']
+    return render_template('MenuPrincipal.html')
+#app.jinja_env.globals.update(Redireccion1=Redireccion1)
 #cambiar
 @app.route('/buscar', methods=['POST'])
-def Redireccion2():
+def buscar():
+    nombre = request.form['nombre']
+    contrasena = request.form['contrasena']
     return render_template('BuscarRecomendaciones.html')
 #cambiar
 @app.route('/recomendar', methods=['POST'])
-def Redireccion3():
+def recomendar():
+    nombre = request.form['nombre']
+    contrasena = request.form['contrasena']
     return render_template('Recomendar.html')
 #cambiar
 @app.route('/index', methods=['POST'])
-def Redireccion4():
+def index():
+    nombre = request.form['nombre']
+    contrasena = request.form['contrasena']
     return render_template('index.html')
 
 @app.route('/registrar',methods=['POST'])

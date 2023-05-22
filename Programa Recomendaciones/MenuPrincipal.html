@@ -31,22 +31,53 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
   
             <!-- Inicio -->
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="menu_principal.html">Menu principal</a>
-        </li>
-          <!-- -->
-              <li class="nav-item">
-                  <a class="nav-link " href="BuscarRecomendaciones.html">Buscar Recomendaciones</a>
-              </li>
-  
+          <form action="/menu"id="menu" method="POST">
+            <!-----SIEMPRE PONER ESTAS DOS LINEAS EN EL HADER-->
+            <input type="hidden" name="nombre" value="{{ nombre }}">
+            <input type="hidden" name="contrasena" value="{{ contrasena }}">
+            <!------------------------------------------------->
             <li class="nav-item">
-              <a class="nav-link " href="Recomendar.html"> Recomienda un Profesor</a>
+              <a class="nav-link active" aria-current="page" href="#" onclick="document.getElementById('menu').submit();">Menu principal</a>
             </li>
+                          
+          </form>
+                          
+          <!-- Buscar Recomendacion-->
+          <form action="/buscar"id="buscar" method="POST">
+            <!-----SIEMPRE PONER ESTAS DOS LINEAS EN EL HADER-->
+            <input type="hidden" name="nombre" value="{{ nombre }}">
+            <input type="hidden" name="contrasena" value="{{ contrasena }}">
+            <!------------------------------------------------->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" onclick="document.getElementById('buscar').submit();">Buscar Recomendaciones</a>
+            </li>
+                          
+          </form>
+  
+            <!-- Recomendar Profesor -->
+          <form action="/recomendar"id="recomendar" method="POST">
+            <!-----SIEMPRE PONER ESTAS DOS LINEAS EN EL HADER-->
+            <input type="hidden" name="nombre" value="{{ nombre }}">
+            <input type="hidden" name="contrasena" value="{{ contrasena }}">
+            <!------------------------------------------------->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" onclick="document.getElementById('recomendar').submit();">Recomendar Profesor</a>
+            </li>
+                          
+          </form>
   
             
+            <!-- -->
+          <form action="/index"id="index" method="POST">
+            <!-----SIEMPRE PONER ESTAS DOS LINEAS EN EL HADER-->
+            <input type="hidden" name="nombre" value="{{ nombre }}">
+            <input type="hidden" name="contrasena" value="{{ contrasena }}">
+            <!------------------------------------------------->
             <li class="nav-item">
-              <a class="nav-link " href="index.html"> Cerrar Sesión</a>
+              <a class="nav-link active" aria-current="page" href="#" onclick="document.getElementById('index').submit();"> Cerrar Sesión </a>
             </li>
+                          
+          </form>
   
           </ul>
   
