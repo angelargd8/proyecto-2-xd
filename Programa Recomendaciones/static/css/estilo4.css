@@ -65,5 +65,13 @@ body{
     font-size: 50px;
   }
 .boton {
-    font-size: 50px;
+    background-color: #94cb93;
+    font-size: 17px;
+    color: rgb(26, 110, 95);
+    text-align: center;
+    border-radius: 20px;
+    font-weight: 700!important;
+    box-shadow: 0 0 30px rgba(0, -0, 0, -0.568);
+    padding: 15px;
+
 }
