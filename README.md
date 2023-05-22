@@ -6,4 +6,4 @@ Diego García - 22404
 Angela García -22869
 
 # NOTA ANTES DE CORRER EL PROGRAMA
-instalar la libreria de python Flask
+instalar la libreria de python Flask y Neo4j
