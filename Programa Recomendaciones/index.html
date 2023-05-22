@@ -28,7 +28,14 @@ css/estilo.css
             <div class="col-md-4 formulario">
 
                 <form action="/form" method="POST">
+                    {% if flagError %}
+                    <script>
+                        // Obtén el mensaje de alerta desde Flask
+                        // Muestra la alerta
+                        alert("El usuario no existe");
 
+                    </script>
+                    {% endif %}
 
                     <!--<img src="../Programa Recomendaciones/static/img/logo5.jpg">-->
      

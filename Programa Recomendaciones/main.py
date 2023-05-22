@@ -54,7 +54,8 @@ def Form():
     if(ret[0] == "No existe"):
         #Aqui se tiene que poner un alert o algo no se como se hace
         #return "<h1>El usuario ingresado no existe </h1>"
-        return "<div class='alert alert-warning' role='alert'> This is a warning alert with <a href='#' class='alert-link'>an example link</a>. Give it a click if you like.</div>"
+        #return "<div class='alert alert-warning' role='alert'> This is a warning alert with <a href='#' class='alert-link'>an example link</a>. Give it a click if you like.</div>"
+        return render_template('index.html', flagError = True)
     else:
         if(ret[0] == nombre and contrasena == ret[1]):
             #Tal ve aqui darle acceso a alguna otra pantalla como un menu
