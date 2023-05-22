@@ -19,6 +19,25 @@ class Neo4JExample:
             entrada = session.execute_write(self.createNewUser,nombre,correo,contra, arrCualidades)
         return entrada
     
+    def CallGetClases(self):
+        with self.driver.session() as session:
+            entrada = session.execute_write(self.getClases)
+        return entrada
+    
+    def callProfesorRecom(self,correo,clase):
+        with self.driver.session() as session:
+            entrada = session.execute_write(self.profesoresRecomendados, correo, clase)
+        return entrada
+
+    
+    @staticmethod
+    def getClases(tx):
+        result = tx.run('match (n:Clase) return  n.name')
+        arrClases = []
+        for record in result:
+            arrClases.append(record["n.name"])
+        return arrClases
+
     @staticmethod
     def createNewUser(tx,nombre,correo,contra, arrCualidades):
         result = tx.run('create (n:Estudiante{name: "'+nombre+'", correo: "'+correo+'", contra: "'+contra+'"})')
@@ -28,6 +47,17 @@ class Neo4JExample:
             query = "match (n:Estudiante{ name: '"+nombre+"'}), (c:Cualidad{name:'"+x+"'}) create (n) - [:Tiene]->(c)"
             tx.run(query)
 
+    @staticmethod
+    def profesoresRecomendados(tx,correo,clase):
+        result = tx.run("MATCH (estudiante:Estudiante {correo: '"+correo+"'})-[:Tiene]->(c:Cualidad) WITH estudiante, COLLECT(DISTINCT c) AS estudianteCualidades MATCH (clase:Clase {name: '"+clase+"'})-[:Da]->(profesor:Profesor)-[:Tiene]->(c:Cualidad) WITH estudiante, estudianteCualidades, profesor, COLLECT(DISTINCT c) AS profesorCualidades RETURN estudiante.name AS estudiante, profesor.name AS profesor, SIZE([x IN estudianteCualidades WHERE x IN profesorCualidades]) AS similitud ORDER BY similitud DESC")
+        arrProfesor = []
+        for record in result:
+            arrAtributos = []
+            arrAtributos.append(record["estudiante"])
+            arrAtributos.append(record["profesor"])
+            arrAtributos.append(record["similitud"])
+            arrProfesor.append(arrAtributos)
+        return arrProfesor
     
     @staticmethod
     def showUsers(tx,correo):
@@ -48,9 +78,9 @@ class Neo4JExample:
 #path Angela: C:\\xampp\\htdocs\\proyecto-2-xd\\Programa Recomendaciones
 #path Diego: C:\\Users\\dgv31\\OneDrive\\Documents\\Universidad\\Semestre 3\\estructura de datos\\Proyecto 2\\Programa Recomendaciones
 
-app = Flask(__name__,template_folder= 'C:\\xampp\\htdocs\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
+app = Flask(__name__,template_folder= 'C:\\Users\\dgv31\\OneDrive\\Documents\\Universidad\\Semestre 3\\estructura de datos\\.proyecto2\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
 BD = Neo4JExample("bolt://localhost:7687", "neo4j", "12345678")
-#neo4j,neo4j
+#neo4j,neo4jj
 
 @app.route('/') #se define un temporador para la ruta principal '/login'
 
@@ -63,25 +93,46 @@ def Form2():
     return render_template('PrimerIngreso.html')
 
 #cambiar
+@app.route('/buscarRecomendacion', methods=['POST'])
+def buscarRecomendacion():
+    clase = request.form["clase"]
+    nombre = request.form['nombre']
+    contrasena = request.form['contrasena']
+    arrClases = BD.CallGetClases()
+    flagExistencia= False
+    for x in arrClases:
+        if(clase.lower() == x.lower()):
+            flagExistencia = True
+            clase = x
+        
+    if(flagExistencia):
+        arrProfesor = BD.callProfesorRecom(nombre, clase)
+        return render_template('BuscarRecomendaciones.html',busqueda = True, nombre = nombre, contrasena = contrasena, arrProfesor = arrProfesor)
+    else:
+        return render_template('BuscarRecomendaciones.html',flagError = True, mensaje = "La clase que ingreso no existe", nombre = nombre, contrasena = contrasena)
+    
+    return "Hola"
+
 
 @app.route('/menu', methods=['POST'])
 def menu():
     nombre = request.form['nombre']
     contrasena = request.form['contrasena']
-    return render_template('MenuPrincipal.html')
+    return render_template('MenuPrincipal.html', nombre = nombre, contrasena = contrasena)
 #app.jinja_env.globals.update(Redireccion1=Redireccion1)
 #cambiar
 @app.route('/buscar', methods=['POST'])
 def buscar():
     nombre = request.form['nombre']
     contrasena = request.form['contrasena']
-    return render_template('BuscarRecomendaciones.html')
+    return render_template('BuscarRecomendaciones.html', nombre = nombre, contrasena = contrasena)
 #cambiar
 @app.route('/recomendar', methods=['POST'])
 def recomendar():
     nombre = request.form['nombre']
     contrasena = request.form['contrasena']
-    return render_template('Recomendar.html')
+    return render_template('Recomendar.html', nombre = nombre, contrasena = contrasena)
+
 #cambiar
 @app.route('/index', methods=['POST'])
 def index():

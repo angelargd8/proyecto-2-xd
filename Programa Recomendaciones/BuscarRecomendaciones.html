@@ -24,6 +24,25 @@
     </script>
   </head>
   <body>
+    {% if flagError %}
+    <script>
+        // Obtén el mensaje de alerta desde Flask
+        // Muestra la alerta
+        var mensaje = "{{ mensaje }}"
+        alert(mensaje);
+
+    </script>
+    {% endif %}
+
+    {% if busqueda %}
+    <script>
+      // Obtén el mensaje de alerta desde Flask
+      // Muestra la alerta
+      var miArr = "{{ arrProfesor }}"
+      alert(miArr);
+
+    </script>
+    {% endif %}
       <!-- ----------------------------------------menu --------------------------------------------->
     
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgb(26, 110, 95);">
@@ -38,6 +57,7 @@
     
               <!-- Inicio -->
             <form action="/menu"id="menu" method="POST">
+
               <!-----SIEMPRE PONER ESTAS DOS LINEAS EN EL HADER-->
               <input type="hidden" name="nombre" value="{{ nombre }}">
               <input type="hidden" name="contrasena" value="{{ contrasena }}">
@@ -103,14 +123,15 @@
           <div class="row justify-content-center pt-7 mt-7 mr-3">
               <div class="col-md-16 formulario2">
   
-                  <form action="/" method="POST">
-
+                  <form action="/buscarRecomendacion" method="POST">
+                    <input type="hidden" name="nombre" value="{{ nombre }}">
+                   <input type="hidden" name="contrasena" value="{{ contrasena }}">
                     <div class="form-group text-center pt-3">
-                      <h3 class="text-light">Escoger la clase </h3>
+                      <h3 class="text-light" >Escoger la clase </h3>
                   </div>
 
                     <div class="input-group mb-4">
-                      <input type="text" class="form-control" placeholder="Ingrese la clase" aria-label="Ingrese la clase" aria-describedby="basic-addon2">
+                      <input type="text" class="form-control" placeholder="Ingrese la clase" name="clase" aria-label="Ingrese la clase" aria-describedby="basic-addon2">
                       <div class="input-group-append">
                         <button class="btn btn-block ingresar" type="submit" >ㅤㅤㅤEnviarㅤㅤㅤ</button>
                       </div>
