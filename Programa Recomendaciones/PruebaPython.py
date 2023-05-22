@@ -47,7 +47,7 @@ class Neo4JExample:
             node_reader = csv.DictReader(file)
             nodes = list(node_reader)
 
-        # Read relationships from CSV
+# Read relationships from CSV
         with open("relationships.csv", mode="r") as file:
             relationship_reader = csv.DictReader(file)
             relationships = list(relationship_reader)
@@ -55,9 +55,28 @@ class Neo4JExample:
         with self.driver.session() as session:
             for node in nodes:
                 labels = node["labels"]
+                labels = labels.replace("[","")
+                labels = labels.replace("]","")
+                labels = labels.replace("'","")
                 properties = node["properties"]
+                properties = properties.replace("{","")
+                properties = properties.replace("}","")
+                proplist = properties.split(",")
+                cont = 0
+                newProperties = "{"
+                for x in proplist:
+                    proplist2 = x.split(":")
+                    prop = proplist2[0]
+                    prop = prop.replace("'","")
+                    newProperties+=prop+":"+proplist2[1]
+                    if(cont < (len(proplist)-1)):
+                        newProperties+=", "
+                    cont+=1
+                newProperties+="}"
 
-                query = "CREATE (n:{}) SET n = {}".format(labels, properties)
+                query = "CREATE (n:{}) SET n = {}".format(labels, newProperties)
+                print(query)
+                #print(query)
                 session.run(query)
 
         with self.driver.session() as session:
@@ -66,8 +85,13 @@ class Neo4JExample:
                 end_node_id = relationship["end_node_id"]
                 relationship_type = relationship["type"]
 
-                query = "MATCH (a), (b) WHERE ID(a) = {} AND ID(b) = {} CREATE (a)-[:{}]->(b)".format(start_node_id, end_node_id, relationship_type)
+                query = "MATCH (a), (b) WHERE ID(a) = {} AND ID(b) = {} CREATE (a)-[:{}]->(b)".format(
+                    start_node_id, end_node_id, relationship_type
+                )
+                print(query)
                 session.run(query)
+        
+        print("Termino de ingresar datos")
 
     def crearCSV(self):
         with self.driver.session() as session:
