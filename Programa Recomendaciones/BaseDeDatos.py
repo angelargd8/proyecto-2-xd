@@ -6,12 +6,13 @@ import csv
 class app(Tk):
     def __init__(self):
         Tk.__init__(self)
-        self.geometry("100x100")
+        self.title("Exportar e importar")
+        self.geometry("250x100")
         self.configure(bg="blueviolet")
         #Button(text="ver",command=self.showUsers).place(x=0,y=5)
-        Button(text="Crear",command=self.createUser).place(x=0,y=5)
-        Button(text="Poner en neo4j",command=self.poner).place(x=0,y=40)
-
+        # bgcolor="#e4c1f9"
+        self.btn1 = Button(text="Exportar a csv",command=self.createUser, width=20);self.btn1.place(x=50,y=10); self.btn1.config(bg="#e4c1f9")
+        self.btn2 = Button(text="Importar csv a neo4j",command=self.poner, width=20);self.btn2.place(x=50,y=40);self.btn2.config(bg="#e0aaff")
         self.BD = Neo4JExample("bolt://localhost:7687", "neo4j", "12345678")
 
     def poner(self):
