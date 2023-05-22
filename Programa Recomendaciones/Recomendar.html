@@ -108,30 +108,39 @@
    
     <main><center>
         <hr><br><br><br>
-        <h1>Danos tu opinión</h1><br><br><br>
-    <h3 for="Maestros">Elige un catedrático: </h3><br>
+        
+    <div class="container">
+      <div class="row justify-content-center pt-6 mt-6 mr-3">
+        <div class="col-md-10 formulario">
 
-    <select name="maestro" id="maestro" width ="40">
-    <option value="Curtis">Ronals Curtis</option>
-    <option value="Aristondo">Aristondo</option>
-    <option value="Douglas">Douglas Barrios</option>
-    <option value="Roger">Roger Diaz</option>
-    </select>
-    <form onsubmit="obtenerValor()">
-        <p class="clasificacion">
-          <input id="radio1" type="radio" name="estrellas" value="5"><!--
-          --><label for="radio1">★</label><!--
-          --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-          --><label for="radio2">★</label><!--
-          --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-          --><label for="radio3">★</label><!--
-          --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-          --><label for="radio4">★</label><!--
-          --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-          --><label for="radio5">★</label>
-        </p>
-        <input type="submit" value="Submit" class="btn btn-success btn-lg">
-      </form>
+          <h1> Danos tu opinión </h1><br><br>
+          <h3 for="Maestros">Elige un catedrático: </h3><br>
+
+          <select name="maestro" id="maestro" width ="40">
+          <option value="Curtis">Ronals Curtis</option>
+          <option value="Aristondo">Aristondo</option>
+          <option value="Douglas">Douglas Barrios</option>
+          <option value="Roger">Roger Diaz</option>
+          </select>
+
+          <form onsubmit="obtenerValor()">
+              <p class="clasificacion">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                --><label for="radio1" class="estrellas" >★</label><!--
+                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                --><label for="radio2" class="estrellas" >★</label><!--
+                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                --><label for="radio3" class="estrellas"  >★</label><!--
+                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                --><label for="radio4" class="estrellas" >★</label><!--
+                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                --><label for="radio5" class="estrellas"  >★</label>
+              </p>
+              <input type="submit" value="Submit" class="btn btn-primary btn-lg btn-block">
+            </form>
+          </div>
+        </div>
+      </div>
     </main><br><br><br><br>
 
     <style>
