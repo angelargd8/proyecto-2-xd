@@ -1,20 +1,20 @@
 node_id,labels,properties
 0,['Estudiante'],"{'correo': 'pin22880@uvg.edu.gt', 'name': 'Gerardo', 'contra': '123'}"
 1,['Clase'],{'name': 'Calculo1'}
-2,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Ronald', 'Descripcion': 'Es un profesor muy organizado con sus notas de clase, y brinda apoyo al estudiante en cualquier duda que tenga. Quiere de verdad que el estudiante aprenda y se desarrolle en el curso. '}"
-3,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Aristondo', 'Descripcion': 'Es una buena opción para cálculo 1 si se desea aprender con una metodología de enseñanza tradicional. Es tolerante con los estudiantes.  '}"
+2,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Ronald Curtiss ', 'Descripcion': 'Es un profesor muy organizado con sus notas de clase y brinda apoyo al estudiante en cualquier duda que tenga. Quiere de verdad que el estudiante aprenda y se desarrolle en el curso. '}"
+3,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Eugenio Aristondo ', 'Descripcion': 'Es una buena opción para calculo 1 si se desea aprender con una metodologia de enseñanza tradicional. Es tolerante con los estudiantes'}"
 4,['Cualidad'],{'name': 'Amable'}
 5,['Cualidad'],{'name': 'Organizacion'}
 6,['Cualidad'],{'name': 'Dominio Tema'}
 7,['Estudiante'],"{'correo': 'gar22869@uvg.edu.gt', 'name': 'Angela', 'contra': '123'}"
 8,['Cualidad'],{'name': 'flexibilidad'}
-9,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Ricardo Cobar', 'Descripcion': 'Una persona muy amable y flexible con las fechas de entrega del curso. Siempre trata de comprender al estudiante.'}"
+9,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Luis Mijangos ', 'Descripcion': 'Una persona muy amable y flexible con las fechas de entrega del curso. Siempre trata de comprender al estudiante.'}"
 10,['Cualidad'],{'name': 'Tolerante'}
 11,['Cualidad'],{'name': 'Preparado'}
 12,['Cualidad'],{'name': 'Exigente'}
-13,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Julian Ortega', 'Descripcion': 'Sobresale su amabilidad ya que nunca trata mal a los estudiantes y es un profesor demasiado empatico dispuesto a ayudar.'}"
+13,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Tomas Galvez', 'Descripcion': 'Sobresale su amabilidad ya que nunca trata mal a los estudiantes y es un profesor demasiado empatico dispuesto a ayudar.'}"
 14,['Clase'],{'name': 'Fisica 1'}
-15,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Marisa Ortega', 'Descripcion': 'Es una maestra bastante amable y lleva un orden en todas las clases que imparte, también es muy considerada con el estudiante'}"
+15,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Claudia Quinteros', 'Descripcion': 'Es amable y para nada empatica con los estudiantes'}"
 16,['Clase'],{'name': 'Estadistica 1'}
 17,['Clase'],{'name': 'Algebra'}
 18,['Clase'],{'name': 'POO'}
@@ -23,18 +23,18 @@ node_id,labels,properties
 21,['Clase'],{'name': 'Ciencias de la Vida'}
 22,['Clase'],{'name': 'Quimica General'}
 23,['Clase'],{'name': 'Retos Ambientales'}
-24,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Regina Perez', 'Descripcion': 'Se ve que sabe mucho sobre la materia y también es bastante tolerante y comprensible con el alumno'}"
-25,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Claudette Rosales', 'Descripcion': 'Es bastante flexible con la fecha de entrega de trabajos por si los estudiantes estan teniendo problemas y es muy empatica'}"
-26,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Pamela Rosa', 'Descripcion': 'Es bastante estricta para el curso de ciencias de la vida, pero también es una catedrática que se ha preparado mucho'}"
-27,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Zoila Juarez'}"
-28,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Erick Zamora', 'Descripcion': 'Es organizado con sus notas de clase y comprensible en cuanto a la fecha de entrega de tareas.'}"
-29,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Carmina Leal', 'Descripcion': 'Es la mejor opción para POO ya que es bastante organizada con los temas de clase y brinda horario de atención a los estudiantes'}"
-30,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Luisa Mijares', 'Descripcion': 'Es muy amable con el estudiante pero sus parciales son demasiado dificiles y suele incluir temas no vistos en clase'}"
-31,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Lydia Perez', 'Descripcion': 'Su mejor caracteristica es su manera de dar los apuntes de clase ya que son demasiado ordenados y faciles de entender. '}"
-32,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Lucas Cano', 'Descripcion': 'Es un maestro con bastante conocimiento de la materia y lo complementa muy bien el orden que lleva en su clase en cuanto a los temas y las fechas de las tareas.  '}"
-33,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Nicki Minaj', 'Descripcion': 'Es muy amable cuando alguien tiene problemas entendiendo los temas y también es tolerante con los estudiantes en cuanto a problemas que tengan. '}"
-34,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Omar Díaz', 'Descripcion': 'Lleva poco tiempo enseñado estructura de datos, pero lo que sobresale de su método de enseñanza es que es comprensible con el alumno y brinda horarios de atención para resolver dudas. '}"
-35,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Alvaro Fernandez', 'Descripcion': 'De los catedráticos de estructura de datos, es el más preparado y con dominio del tema. Se enfoca en que el estudiante de verdad aprenda. '}"
-36,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Taylor Suifti', 'Descripcion': 'Lleva varios años en la universidad y es una de las mejores catedráticas de estadistica 1 ya que sabe mucho sobre el tema y es flexible y empatica con el alumno. '}"
-37,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Lisa Barillas', 'Descripcion': 'Es una catedrática demasiado exigente para Algebra pero vale la pena ya que quiere que el estudiante aprenda de verdad.'}"
-38,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Daniel Oceano', 'Descripcion': 'Hace que el estudiante se sienta en un ambiente de comodidad donde es libre de expresarse ya que es muy amable, pero también esta bien preparado, sin mencionar que tiene una metología de enseñanza creativa.  '}"
+24,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Priscila Juarez', 'Descripcion': 'Se ve que sabe mucho sobre la materia y tambien es bastante tolerante y comprensible con el alumno'}"
+25,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Silja Ramirez', 'Descripcion': 'Es bastante flexible con la fecha de entrega de trabajos por si los estudiantes estan teniendo problemas y es muy empatica'}"
+26,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Ana Hacohen', 'Descripcion': 'Es bastante estricta para el curso de ciencias de la vida pero tambien es una catedratica que se ha preparado mucho '}"
+27,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Carlos Alonzo', 'Descripcion': ' Brinda mucha atencion al estudiante y se enfoca que aprenda de verdad y se sienta comodo en la clase.'}"
+28,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Lynette Perez', 'Descripcion': 'Es organizado con sus notas de clase y comprensible en cuanto a la fecha de entrega de tareas.'}"
+29,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Ludwing Cano', 'Descripcion': 'Es la mejor opcion para POO ya que es bastante organizado con los temas de clase y brinda horario de atencion a los estudiantes'}"
+30,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Maria Romero', 'Descripcion': 'Es muy amable con el estudiante pero sus parciales son demasiado dificiles y suele incluir temas no vistos en clase'}"
+31,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Eugenia Nieves', 'Descripcion': 'Su mejor caracteristica es su manera de dar los apuntes de clase ya que son demasiado ordenados y faciles de entender. '}"
+32,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Maria Jose Bran', 'Descripcion': 'Es un maestro con bastante conocimiento de la materia y lo complementa muy bien el orden que lleva en su clase en cuanto a los temas y las fechas de las tareas.  '}"
+33,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Zayda Perez ', 'Descripcion': 'Es muy amable cuando alguien tiene problemas entendiendo los temas y tambien es tolerante con los estudiantes en cuanto a problemas que tengan.  '}"
+34,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Douglas Barrios', 'Descripcion': 'Lleva mucho tiempo enseñando estructura de datos. Lo que sobresale de su metodo de enseñanza es que es comprensible con el alumno y brinda horarios de atencion para resolver dudas.  '}"
+35,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Moises Alonzo', 'Descripcion': 'De los catedraticos de estructura de datos, es uno de los mas preparado y con dominio del tema. No se enfoca en que el estudiante de verdad aprenda.  '}"
+36,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Amalia Ruballos ', 'Descripcion': 'Lleva varios años en la universidad y es una de las mejores catedraticas de estadistica 1 ya que sabe mucho sobre el tema y es flexible y empatica con el alumno.  '}"
+37,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Monica Cabria', 'Descripcion': 'Es una catedratica nueva en la universidad por lo que su metodo de enseñanza se basa mucho en el libro del curso. '}"
+38,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Maria Elisa Duarte ', 'Descripcion': 'Hace que el estudiante se sienta en un ambiente de comodidad donde es libre de expresarse ya que es muy amable pero también esta bien preparada. Sin mencionar que tiene una metologia de enseñanza creativa.  '}"
