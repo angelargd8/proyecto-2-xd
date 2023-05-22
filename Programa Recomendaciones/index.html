@@ -32,7 +32,8 @@ css/estilo.css
                     <script>
                         // Obtén el mensaje de alerta desde Flask
                         // Muestra la alerta
-                        alert("El usuario no existe");
+                        var mensaje = "{{ mensaje }}"
+                        alert(mensaje);
 
                     </script>
                     {% endif %}

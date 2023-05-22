@@ -31,11 +31,21 @@
     <title>MenuPrincipal</title>
 </head>
 <body><center>
+  {% if flagError %}
+    <script>
+      // Obtén el mensaje de alerta desde Flask
+      var mensaje = "{{ mensaje }}";
+
+      // Muestra la alerta
+      alert(mensaje);
+    </script>
+  {% endif %}
+
   <div class="container">
     <div class="row justify-content-center pt-5 mt-5 mr-1">
         <div class="col-md-4 formulario">
 
-            <form action="/registrar" method="POST" onsubmit="obtenerValores()" >
+            <form action="/registrar" method="POST">
                
  
                 <div class="form-group text-center pt-3">
@@ -64,32 +74,32 @@
                   </label><br>
                   <label for="cara2" style="height: 30px;">
                     
-                    <input type="checkbox" id="cara2" name="cara2" value="Organizado">
+                    <input type="checkbox" id="cara2" name="cara2" value="Organizacion">
                     <span class="checkbox"></span>
                     Organizado
                   </label><br>
                   <label for="cara3" style="height: 30px;">
                     
-                    <input type="checkbox" id="cara3" name="cara3" value="DominioTema">
+                    <input type="checkbox" id="cara3" name="cara3" value="Dominio Tema">
                     <span class="checkbox"></span>
                     Dominio del tema
                   </label><br>
                   <label for="cara4" style="height: 30px;">
                     
-                      <input type="checkbox" id="cara4" name="cara4" value="DominioTema">
+                      <input type="checkbox" id="cara4" name="cara4" value="Dominio Tema">
                       <span class="checkbox"></span>
                       Tolerante
                     </label><br>
                     <label for="cara5" style="height: 30px;">
                     
-                      <input type="checkbox" id="cara5" name="cara5" value="DominioTema">
+                      <input type="checkbox" id="cara5" name="cara5" value="Dominio Tema">
                       <span class="checkbox"></span>
                       Exigente
                     </label><br>
 
                     <label for="cara7" style="height: 30px;">
                     
-                      <input type="checkbox" id="cara7" name="cara7" value="DominioTema">
+                      <input type="checkbox" id="cara7" name="cara7" value="Dominio Tema">
                       <span class="checkbox"></span>
                       Flexible
                     </label><br>
@@ -97,7 +107,7 @@
 
                     <label for="cara8" style="height: 30px;">
                     
-                      <input type="checkbox" id="cara8" name="cara8" value="DominioTema">
+                      <input type="checkbox" id="cara8" name="cara8" value="Dominio Tema">
                       <span class="checkbox"></span>
                       <a style="height: 30px;">Preparado</a>
                     </label><br><br>

@@ -14,6 +14,21 @@ class Neo4JExample:
             entrada = session.execute_write(self.showUsers,correo)
         return entrada
     
+    def callCreateNewUser(self,nombre,correo,contra, arrCualidades):
+        with self.driver.session() as session:
+            entrada = session.execute_write(self.createNewUser,nombre,correo,contra, arrCualidades)
+        return entrada
+    
+    @staticmethod
+    def createNewUser(tx,nombre,correo,contra, arrCualidades):
+        result = tx.run('create (n:Estudiante{name: "'+nombre+'", correo: "'+correo+'", contra: "'+contra+'"})')
+
+        for x in arrCualidades:
+            print(x)
+            query = "match (n:Estudiante{ name: '"+nombre+"'}), (c:Cualidad{name:'"+x+"'}) create (n) - [:Tiene]->(c)"
+            tx.run(query)
+
+    
     @staticmethod
     def showUsers(tx,correo):
         result = tx.run('match (n:Estudiante{correo: "'+correo+'"}) return n.correo, n.contra')
@@ -31,7 +46,7 @@ class Neo4JExample:
 #Aqui tienen que cambiar a su ruta de la carpeta raíz
 #path Gerax: C:\\Users\\USUARIO\\Desktop\\Proyecto2Github\\proyecto-2-xd\\Programa Recomendaciones
 #path Angela: C:\\xampp\\htdocs\\proyecto-2-xd\\Programa Recomendaciones
-app = Flask(__name__,template_folder= 'C:\\xampp\\htdocs\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
+app = Flask(__name__,template_folder= 'C:\\Users\\USUARIO\\Desktop\\Proyecto2Github\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
 BD = Neo4JExample("bolt://localhost:7687", "neo4j", "12345678")
 #neo4j,neo4j
 
@@ -44,6 +59,40 @@ def inicio():
 @app.route('/form2', methods=['POST'])
 def Form2():
     return render_template('PrimerIngreso.html')
+
+@app.route('/registrar',methods=['POST'])
+def Registrar():
+    arrCualidades = []
+    nombre = request.form['nombre']
+    contrasena = request.form['contrasena']
+    correo = request.form['correo']
+
+    if(nombre != "" and contrasena != "" and correo != ""):
+        if 'cara1' in request.form:
+            arrCualidades.append(request.form['cara1'])
+        if 'cara2' in request.form:
+            arrCualidades.append(request.form['cara2'])
+        if 'cara3' in request.form:
+            arrCualidades.append(request.form['cara3'])
+        if 'cara4' in request.form:
+            arrCualidades.append(request.form['cara4'])
+        if 'cara5' in request.form:
+            arrCualidades.append(request.form['cara5'])
+        if 'cara6' in request.form:
+            arrCualidades.append(request.form['cara6'])
+        if 'cara7' in request.form:
+            arrCualidades.append(request.form['cara7'])
+        if 'cara8' in request.form:
+            arrCualidades.append(request.form['cara8'])
+
+        if(len(arrCualidades)>=3):
+            BD.callCreateNewUser(nombre,correo,contrasena, arrCualidades)
+            return render_template('MenuPrincipal.html', nombre=nombre, contrasena=contrasena)
+        else:
+            return render_template('PrimerIngreso.html', flagError = True,mensaje="Seleccione por lo menos 3 cualidades")
+    else:
+        return render_template('PrimerIngreso.html', flagError = True,mensaje="Complete todos los campos")        
+
 
 #se define el route con el metodo post
 @app.route('/form', methods=['POST'])
@@ -59,13 +108,13 @@ def Form():
         #Aqui se tiene que poner un alert o algo no se como se hace
         #return "<h1>El usuario ingresado no existe </h1>"
         #return "<div class='alert alert-warning' role='alert'> This is a warning alert with <a href='#' class='alert-link'>an example link</a>. Give it a click if you like.</div>"
-        return render_template('index.html', flagError = True)
+        return render_template('index.html', flagError = True,mensaje="El usuario que inteto ingresar no existe")
     else:
         if(ret[0] == nombre and contrasena == ret[1]):
             #Tal ve aqui darle acceso a alguna otra pantalla como un menu
             return render_template('MenuPrincipal.html', nombre=nombre, contrasena=contrasena)
         else:
-            return "<h1>Error en el usuario o contraseña </h1>"
+            return render_template('index.html', flagError = True,mensaje="Contraseña incorrecta")
 
     #return render_template('form.html', nombre=nombre, contrasena=contrasena)
 
