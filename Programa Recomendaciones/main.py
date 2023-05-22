@@ -46,7 +46,7 @@ class Neo4JExample:
 #Aqui tienen que cambiar a su ruta de la carpeta raíz
 #path Gerax: C:\\Users\\USUARIO\\Desktop\\Proyecto2Github\\proyecto-2-xd\\Programa Recomendaciones
 #path Angela: C:\\xampp\\htdocs\\proyecto-2-xd\\Programa Recomendaciones
-app = Flask(__name__,template_folder= 'C:\\Users\\USUARIO\\Desktop\\Proyecto2Github\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
+app = Flask(__name__,template_folder= 'C:\\xampp\\htdocs\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
 BD = Neo4JExample("bolt://localhost:7687", "neo4j", "12345678")
 #neo4j,neo4j
 
@@ -59,6 +59,23 @@ def inicio():
 @app.route('/form2', methods=['POST'])
 def Form2():
     return render_template('PrimerIngreso.html')
+
+#cambiar
+@app.route('/menu', methods=['POST'])
+def Redireccion1():
+    return render_template('menu_principal.html')
+#cambiar
+@app.route('/buscar', methods=['POST'])
+def Redireccion2():
+    return render_template('BuscarRecomendaciones.html')
+#cambiar
+@app.route('/recomendar', methods=['POST'])
+def Redireccion3():
+    return render_template('Recomendar.html')
+#cambiar
+@app.route('/index', methods=['POST'])
+def Redireccion4():
+    return render_template('index.html')
 
 @app.route('/registrar',methods=['POST'])
 def Registrar():
