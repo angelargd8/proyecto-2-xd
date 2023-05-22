@@ -33,4 +33,4 @@ Ejecutar el archivo
 - PruebaPython.py
  ```
 
-![Una vez abierto seleccionar el boton que dice Poner en neo4j](https://github.com/angelargd8/proyecto-2-xd/tree/main/assets/BaseDeDatos.png)
+![Una vez abierto seleccionar el boton que dice Poner en neo4j](https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/BaseDeDatos.png)
