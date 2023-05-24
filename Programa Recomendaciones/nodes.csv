@@ -2,7 +2,7 @@ node_id,labels,properties
 0,['Estudiante'],"{'correo': 'pin22880@uvg.edu.gt', 'name': 'Gerardo', 'contra': '123'}"
 1,['Clase'],{'name': 'Calculo1'}
 2,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Ronald Curtiss ', 'Descripcion': 'Es un profesor muy organizado con sus notas de clase y brinda apoyo al estudiante en cualquier duda que tenga. Quiere de verdad que el estudiante aprenda y se desarrolle en el curso. '}"
-3,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Eugenio Aristondo ', 'Descripcion': 'Es una buena opciï¿½n para calculo 1 si se desea aprender con una metodologia de enseï¿½anza tradicional. Es tolerante con los estudiantes'}"
+3,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Eugenio Aristondo ', 'Descripcion': 'Es una buena opción para calculo 1 si se desea aprender con una metodologia de enseñanza tradicional. Es tolerante con los estudiantes'}"
 4,['Cualidad'],{'name': 'Amable'}
 5,['Cualidad'],{'name': 'Organizacion'}
 6,['Cualidad'],{'name': 'Dominio Tema'}
@@ -33,8 +33,22 @@ node_id,labels,properties
 31,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Eugenia Nieves', 'Descripcion': 'Su mejor caracteristica es su manera de dar los apuntes de clase ya que son demasiado ordenados y faciles de entender. '}"
 32,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Maria Jose Bran', 'Descripcion': 'Es un maestro con bastante conocimiento de la materia y lo complementa muy bien el orden que lleva en su clase en cuanto a los temas y las fechas de las tareas.  '}"
 33,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Zayda Perez ', 'Descripcion': 'Es muy amable cuando alguien tiene problemas entendiendo los temas y tambien es tolerante con los estudiantes en cuanto a problemas que tengan.  '}"
-34,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Douglas Barrios', 'Descripcion': 'Lleva mucho tiempo enseï¿½ando estructura de datos. Lo que sobresale de su metodo de enseï¿½anza es que es comprensible con el alumno y brinda horarios de atencion para resolver dudas.  '}"
-35,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Moises Alonzo', 'Descripcion': 'De los catedraticos de estructura de datos. Es uno de los mas preparado y con dominio del tema. No se enfoca en que el estudiante de verdad aprenda.  '}"
-36,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Amalia Ruballos ', 'Descripcion': 'Lleva varios aï¿½os en la universidad y es una de las mejores catedraticas de estadistica 1 ya que sabe mucho sobre el tema y es flexible y empatica con el alumno.  '}"
-37,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Monica Cabria', 'Descripcion': 'Es una catedratica nueva en la universidad por lo que su metodo de enseï¿½anza se basa mucho en el libro del curso. '}"
-38,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Maria Elisa Duarte ', 'Descripcion': 'Hace que el estudiante se sienta en un ambiente de comodidad donde es libre de expresarse ya que es muy amable pero tambiï¿½n esta bien preparada. Sin mencionar que tiene una metologia de enseï¿½anza creativa.  '}"
+34,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Douglas Barrios', 'Descripcion': 'Lleva mucho tiempo enseñando estructura de datos. Lo que sobresale de su metodo de enseñanza es que es comprensible con el alumno y brinda horarios de atencion para resolver dudas.  '}"
+35,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Moises Alonzo', 'Descripcion': 'De los catedraticos de estructura de datos y es uno de los mas preparado y con dominio del tema. No se enfoca en que el estudiante de verdad aprenda.  '}"
+36,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Amalia Ruballos ', 'Descripcion': 'Lleva varios años en la universidad y es una de las mejores catedraticas de estadistica 1 ya que sabe mucho sobre el tema y es flexible y empatica con el alumno.  '}"
+37,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Monica Cabria', 'Descripcion': 'Es una catedratica nueva en la universidad por lo que su metodo de enseñanza se basa mucho en el libro del curso. '}"
+38,['Profesor'],"{'Personasc': 0, 'Puntuacion': 0, 'name': 'Maria Elisa Duarte ', 'Descripcion': 'Hace que el estudiante se sienta en un ambiente de comodidad donde es libre de expresarse ya que es muy amable pero también esta bien preparada. Sin mencionar que tiene una metologia de enseñanza creativa.  '}"
+39,['Clase'],{'name': 'Organizacion de computadoras y assembler'}
+40,['Clase'],{'name': 'Plataformas moviles'}
+41,['Clase'],{'name': 'Microprocesadores'}
+42,['Clase'],{'name': 'Ecuaciones diferenciales'}
+43,['Clase'],{'name': 'Calculo 2'}
+44,['Clase'],{'name': 'Fisica 2'}
+45,['Clase'],{'name': 'Guatemala en el contexto mundial'}
+46,['Clase'],{'name': 'Ciudadania Global'}
+47,['Clase'],{'name': 'Pensamiento cuantitativo'}
+48,['Clase'],{'name': 'Mate discreta'}
+49,['Clase'],{'name': 'Investigacion y pensamiento cientifico'}
+50,['Clase'],{'name': 'Comunicacion efectiva'}
+51,['Clase'],{'name': 'Introduccion a la ingenieria en computacion'}
+52,['Clase'],{'name': 'Fisica 3'}
