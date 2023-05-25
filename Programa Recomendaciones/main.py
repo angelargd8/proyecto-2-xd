@@ -30,6 +30,11 @@ class Neo4JExample:
             entrada = session.execute_write(self.profesoresRecomendados, correo, clase)
         return entrada
 
+    def callDescriptionProfessors(self,nombreProfesores):
+        with self.driver.session() as session:
+            entrada = session.execute_write(self.getDescription,nombreProfesores)
+        return entrada
+
     
     @staticmethod
     def getClases(tx):
@@ -38,6 +43,22 @@ class Neo4JExample:
         for record in result:
             arrClases.append(record["n.name"])
         return arrClases
+
+    @staticmethod
+    def getDescription(tx,nombreProfesores):
+        datosProfesores = []
+        for nombre in nombreProfesores:
+            profesor = []
+            profesor.append(nombre)
+            result = tx.run('match (n:Profesor{name: "'+nombre+'" }) return n.Descripcion, n.Personasc, n.Puntuacion')
+            for record in result:
+                profesor.append(record["n.Descripcion"])
+                profesor.append(record["n.Personasc"])
+                profesor.append(record["n.Puntuacion"])
+            datosProfesores.append(profesor)
+        
+        return datosProfesores
+
 
     @staticmethod
     def createNewUser(tx,nombre,correo,contra, arrCualidades):
@@ -111,6 +132,10 @@ def buscarRecomendacion():
         nombreProfe = []
         for x in arrProfesor:
             nombreProfe.append(x[1])
+
+        #Aqui estan todos los datos de los profesores :)
+        datosProfesores = BD.callDescriptionProfessors(nombreProfe)
+        
         #Por el momento y como esta hecha la base de datos solo manda dos profesores porque solo llega a 2
         return render_template('BuscarRecomendaciones.html',busqueda = True, nombre = nombre, contrasena = contrasena, profe1 = nombreProfe[0], profe2 = nombreProfe[1])
     else:
