@@ -52,3 +52,19 @@ node_id,labels,properties
 50,['Clase'],{'name': 'Comunicacion efectiva'}
 51,['Clase'],{'name': 'Introduccion a la ingenieria en computacion'}
 52,['Clase'],{'name': 'Fisica 3'}
+53,['Profesor'],"{'name': 'Jose Pablo Ortega', 'Descripcion': 'Es un catedratico muy amable con sus estudiantes y siempre esta dispuesto ayudar. Tiene horarios de atencion'}"
+54,['Profesor'],"{'name': 'Magda Mendizabal', 'Descripcion': 'Maestra muy amable con mucha atencion al estudiante y es comprensiva con los estudiantes y flexible con las fechas de las tareas'}"
+55,['Profesor'],"{'name': 'Nancy Zurita', 'Descripcion': 'Coordinadora del departamento de matemetica y es muy organizada con sus notas de clase.'}"
+56,['Profesor'],"{'name': 'Luis Arana', 'Descripcion': 'No demuestra mucho entusiasmo para explicar y se siente que lo hace a la carrera.'}"
+57,['Profesor'],"{'name': 'Sussy Zuñiga', 'Descripcion': 'Enseña bien pero en ocasiones llega a ser exigente y pesada con el estudiante.'}"
+58,['Profesor'],"{'name': 'Rossana Rosino', 'Descripcion': 'Maestra muy comprensible con el estudiante y siempre trata de ayudar como puede.'}"
+59,['Profesor'],"{'name': 'Evelyn Luna', 'Descripcion': 'Demuestra entusiasmo en su clase y su metologia es compatible con muchos estudiantes.'}"
+60,['Profesor'],"{'name': 'Michael Finkel', 'Descripcion': 'Se ve que domina muy bien el campo e incita a sus estudiantes a mejorar.'}"
+61,['Profesor'],"{'name': 'Carmen Ortiz', 'Descripcion': 'Destaca su amabilidad y ganas de enseñar. Siempre dispuesta a resolver dudas.'}"
+62,['Profesor'],"{'name': 'Odra Lara', 'Descripcion': 'Demuestra dominio del campo y tiene un caracter que motiva a aprender.'}"
+63,['Profesor'],"{'name': 'Adrian Gil', 'Descripcion': 'Tiene mucho dominio de la materia y es una persona muy amable.'}"
+64,['Profesor'],"{'name': 'Rita Calzia', 'Descripcion': 'Es una catedratica que motiva a aprender y sobresale su apoyo al estudiante.'}"
+65,['Profesor'],"{'name': 'Maria Zaghi', 'Descripcion': 'Catedratica muy amable pero el programa del curso no tiene que ver con la carrera de ingeniera en ciencias de la computacion.'}"
+66,['Profesor'],"{'name': 'Samuel Rios', 'Descripcion': 'Es un catedratico muy amable y organizado que hace del curso un lugar de confianza.'}"
+67,['Profesor'],"{'name': 'Maria Cosenza', 'Descripcion': 'Destaca su dominio en el tema pero es una catedratica exigente y organizada.'}"
+68,['Profesor'],"{'name': 'Kimberly Barrera', 'Descripcion': 'Brinda mucha atencion al estudiante para que domine los temas de la clase.'}"

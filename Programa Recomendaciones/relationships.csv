@@ -84,3 +84,6 @@ relationship_id,start_node_id,end_node_id,type,properties
 82,1,36,Da,{}
 83,43,36,Da,{}
 84,43,31,Da,{}
+85,21,15,Da,{}
+86,16,3,Da,{}
+87,18,28,Da,{}
