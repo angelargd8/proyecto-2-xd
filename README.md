@@ -41,9 +41,13 @@ Ejecutar el archivo
 
 Una vez dentro verificar que si se haya creado correctamente, si no repetir proceso.
 
+La BD tiene que verse de la siguiente forma:
+
 <p align="center" width="100%">
-    <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/BaseDeDatos2.png"> 
+    <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/BD.png"> 
 </p>
+
+
 ## Tercera Parte: Accionar el servido para la interaccion de python a html
 
 Ejectutar el programa de python con el nombre
@@ -54,7 +58,7 @@ Ejectutar el programa de python con el nombre
  Deberia de salir algo parecido a esto
  
  <p align="center" width="100%">
-    <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/BaseDeDatos2.png"> 
+    <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/serverPython.png"> 
 </p>
  
 ### <ins> Posibles Errores </ins>
@@ -67,10 +71,14 @@ para poder solucionar esto es de la siguiente forma.
 #### 1) Apague la BD de neo4j
 #### 2) Una vez apagada inicie el programa de Main.py (Esto deberia de correr sin ningun problema)
 #### 3) Inicie la BD de neo4j (Deberia de aparecer lo que se ve en la imagen
+
+
 <p align="center" width="100%">
     <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/BaseDeDatos2.png"> 
 </p>
-#### 3) Apache el boton azul de abajo a la izquierda
+
+
+#### 3) Apache el boton azul de abajo a la izquierda, esto deberia de cambiar el puerto en el que se despliega el servidor de neo4j.
 
 
 
