@@ -30,7 +30,7 @@ Una vez instalado las librerias digerise a la base de datos neo4j y realizar el 
 
 Ejecutar el archivo
  ```diff 
-- PruebaPython.py
+- BaseDeDatos.py
  ```
 
-![Una vez abierto seleccionar el boton que dice Poner en neo4j](https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/BaseDeDatos.png)
+![Una vez abierto seleccionar el boton que dice Poner en neo4j](https://github.com/angelargd8/proyecto-2-xd/Programa-Recomendaciones/static/img/readme.jpg)
