@@ -100,7 +100,7 @@ class Neo4JExample:
 #path Angela: C:\\xampp\\htdocs\\proyecto-2-xd\\Programa Recomendaciones
 #path Diego: C:\\Users\\dgv31\\OneDrive\\Documents\\Universidad\\Semestre 3\\estructura de datos\\Proyecto 2\\Programa Recomendaciones
 
-app = Flask(__name__,template_folder= 'C:\\Users\\dgv31\\OneDrive\\Documents\\Universidad\\Semestre 3\\estructura de datos\\.proyecto2\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
+app = Flask(__name__,template_folder= 'C:\\xampp\\htdocs\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
 BD = Neo4JExample("bolt://localhost:7687", "neo4j", "12345678")
 #neo4j,neo4jj
 
@@ -135,9 +135,16 @@ def buscarRecomendacion():
 
         #Aqui estan todos los datos de los profesores :)
         datosProfesores = BD.callDescriptionProfessors(nombreProfe)
+
+
+        for datos in datosProfesores:
+            print(datos)
+        
+        return render_template('BuscarRecomendaciones.html',busqueda = True, nombre = nombre, contrasena = contrasena, datosProfesores=datosProfesores, flagProfesores=True)
+
         
         #Por el momento y como esta hecha la base de datos solo manda dos profesores porque solo llega a 2
-        return render_template('BuscarRecomendaciones.html',busqueda = True, nombre = nombre, contrasena = contrasena, profe1 = nombreProfe[0], profe2 = nombreProfe[1])
+        #return render_template('BuscarRecomendaciones.html',busqueda = True, nombre = nombre, contrasena = contrasena, profe1 = nombreProfe[0], profe2 = nombreProfe[1])
     else:
         return render_template('BuscarRecomendaciones.html',flagError = True, mensaje = "La clase que ingreso no existe", nombre = nombre, contrasena = contrasena)
     
