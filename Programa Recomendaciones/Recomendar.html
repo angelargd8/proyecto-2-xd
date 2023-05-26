@@ -139,7 +139,11 @@
             <h1> Danos tu opinión </h1><br><br>
             <h3 for="Maestros">Elige un catedrático: </h3><br>
             
-            <form  action="/valores" id="valores" method="POST">
+            <form  action="/CrearCalificacion" id="valores" method="POST">
+              <script>
+                  console.log("{{ nombre }}")
+              </script>
+              
 
             <select name="maestro" id="maestro" width ="40">
             <script>
@@ -148,7 +152,7 @@
 
               for (let clave in claves) {
 
-                  contenidoHTML += `<option value="${clave}">${claves[clave]}</option>`;
+                  contenidoHTML += `<option value="${claves[clave]}">${claves[clave]}</option>`;
               }
               container.innerHTML = contenidoHTML;
 
@@ -157,17 +161,19 @@
             </select>
           
                 <p class="clasificacion">
-                  <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                  <input id="radio1" type="radio" name="estrellas" value="100"><!--
                   --><label for="radio1" class="estrellas" >★</label><!--
-                  --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                  --><input id="radio2" type="radio" name="estrellas" value="80"><!--
                   --><label for="radio2" class="estrellas" >★</label><!--
-                  --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                  --><input id="radio3" type="radio" name="estrellas" value="60"><!--
                   --><label for="radio3" class="estrellas"  >★</label><!--
-                  --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                  --><input id="radio4" type="radio" name="estrellas" value="40"><!--
                   --><label for="radio4" class="estrellas" >★</label><!--
-                  --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                  --><input id="radio5" type="radio" name="estrellas" value="20"><!--
                   --><label for="radio5" class="estrellas"  >★</label>
                 </p>
+                <input type="hidden" name="nombre" value="{{ nombre }}">
+                <input type="hidden" name="contrasena" value="{{ contrasena }}">
                 <input type="submit" value="ㅤㅤㅤSubmitㅤㅤㅤ" class="boton">
                 
             </form>

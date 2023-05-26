@@ -40,6 +40,11 @@ class Neo4JExample:
             entrada, profesoresDict = session.execute_write(self.getDescription,nombreProfesores)
         return entrada, profesoresDict
 
+    def callCalificarProfesor(self,nombre,calificacion):
+        with self.driver.session() as session:
+            entrada = session.execute_write(self.calificarProfesor,nombre,calificacion)
+        return entrada
+
     def callBestPuntuation(self):
         with self.driver.session() as session:
             entrada = session.execute_write(self.getBestProfessor)
@@ -121,6 +126,25 @@ class Neo4JExample:
         return (arrProfesor)
     
     @staticmethod
+    def calificarProfesor(tx,nombre,calificacion):
+        result = tx.run('match (n:Profesor{name:"'+nombre+'"}) return n.Personasc, n.Puntuacion')
+        arrResultados = []
+        for record in result:
+            arrResultados.append(int(record["n.Personasc"]))
+            arrResultados.append(int(record["n.Puntuacion"]))
+
+        if(arrResultados[0] == 0):
+            arrResultados[1] = calificacion
+        else:
+            sum = arrResultados[1] + int(calificacion)
+            arrResultados[1] = sum/2
+
+        arrResultados[0]+=1
+
+        result = tx.run('match (n:Profesor{name:"'+nombre+'"}) set n.Personasc='+str(arrResultados[0])+', n.Puntuacion='+str(arrResultados[1]))
+
+
+    @staticmethod
     def showUsers(tx,correo):
         result = tx.run('match (n:Estudiante{correo: "'+correo+'"}) return n.correo, n.contra')
         print(result)
@@ -140,7 +164,7 @@ class Neo4JExample:
 #path Diego: C:\\Users\\dgv31\\OneDrive\\Documents\\Universidad\\Semestre 3\\estructura de datos\\Proyecto 2\\Programa Recomendaciones
 #path Francis: C:\\Users\\fagui\\Documents\\Francis\\2023\\UVG\\Tercer semestre\\Algoritmos\\neo4j\\proyecto-2-xd\\Programa Recomendaciones
 
-app = Flask(__name__,template_folder= 'C:\\xampp\\htdocs\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
+app = Flask(__name__,template_folder= 'C:\\Users\\USUARIO\\Desktop\\Proyecto2Github\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
 BD = Neo4JExample("bolt://localhost:7687", "neo4j", "12345678")
 #neo4j,neo4jj
 
@@ -245,8 +269,20 @@ def menu():
     return render_template('MenuPrincipal.html', nombre = nombre, contrasena = contrasena)
 #app.jinja_env.globals.update(Redireccion1=Redireccion1)
 #cambiar
-#
-@app.route('//primeraVista', methods=['POST'])
+#calificacion
+@app.route('/CrearCalificacion', methods=['POST'])
+def CrearCalificacion():
+    #nombre = request.form['nombre']
+    #contrasena = request.form['contrasena']
+    maestro = request.form["maestro"]
+    estrellas = request.form["estrellas"]    
+    BD.callCalificarProfesor(maestro,estrellas)
+    #nombre = nombre, contrasena = contrasena,
+
+    return render_template('Recomendar.html', flagPrimeraVista=True)
+
+
+@app.route('/primeraVista', methods=['POST'])
 def primeraVista():
     nombre = request.form['nombre']
     contrasena = request.form['contrasena']
