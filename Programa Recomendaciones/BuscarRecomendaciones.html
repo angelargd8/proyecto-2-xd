@@ -126,6 +126,7 @@
               <div class="col-md-16 formulario2">
   
                   <form action="/buscarRecomendacion" method="POST">
+                    
                     <input type="hidden" name="nombre" value="{{ nombre }}">
                    <input type="hidden" name="contrasena" value="{{ contrasena }}">
                     <div class="form-group text-center pt-3">
@@ -160,6 +161,16 @@
               <div class="col-12 col-sm-6">
               
                 <div class="card" style="width: 25rem;">
+                
+                  <ul>
+                    {% if flagProfesores %}
+                      {% for item in datosProfesores %}
+                      <li>{{item}}</li>
+                       {% endfor %}
+                      </ul>
+                    {% endif %}
+
+
                     <img class="card-img-top" src="{{ url_for('static', filename='img/man.png') }}" alt="Card image cap">
                     <div id ="container"class="card-body">
                       <script>
