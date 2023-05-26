@@ -21,29 +21,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
      // var miArray = ['Curtis', 'Magda', 'Roger', 'Gonzalo'];
-      var Desc = ['Amabre <br> Estricto <br> Domina el tema', 'Amable <br> Domina el tema', 'Amable <br> Domina el tema <br> Empatico', 'Amable <br> Empatico '];
-      var miArray = ['Curtis', 'Aristondo', 'Roger', 'Gonzalo'];
+     // var Desc = ['Amabre <br> Estricto <br> Domina el tema', 'Amable <br> Domina el tema', 'Amable <br> Domina el tema <br> Empatico', 'Amable <br> Empatico '];
+     // var miArray = ['Curtis', 'Aristondo', 'Roger', 'Gonzalo'];
      
     </script>
   </head>
   <body>
     {% if flagProfesores %}
             <script>
-              window.onload = function() {
-                //console.log('{{ datosProfesores|tojson|safe }}')
-                var json_data = ('{{ datosProfesores|tojson|safe }}');  // Convertir la cadena JSON a un objeto JavaScript
-                var dicc = JSON.parse( json_data );
-                console.log(typeof dicc);
-                
-                // Ejemplo de acceso a los valores del diccionario
-                //var luisDescripcion = dicc['Ludwing Cano']["Descripcion"];
-                //var mariaPersonasc = json_data['Maria Elisa Duarte']['Personasc'];
-                
-                console.log('Descripción de Luis Mijangos:', luisDescripcion);
-                //console.log('Personas c de Maria Elisa Duarte:', mariaPersonasc);
-                
-                // Puedes utilizar los valores del diccionario como necesites
-            };
+                var dict = {{ datosProfesores | tojson }};
+                //var lui = dict["Luis Mijangos "]
+                console.log(dict)
+                //console.log(lui)
+                var claves = Object.keys(dict);
+                //console.log(claves)
+                var desc = [];
+                for (var clave in claves) {
+                  //console.log(claves[clave])
+                  desc.push(dict[claves[clave]]["Descripcion"])
+                }
+                console.log(claves)
+                console.log(desc)
             </script>          
             {% endif %}
     {% if flagError %}
@@ -193,9 +191,9 @@
                     <div id ="container"class="card-body">
                       <script>
                         
-                        var contenidoHTML="<h5 class='card-title'>"+miArray[0]+"</h5>"+
+                        var contenidoHTML="<h5 class='card-title'>"+claves[0]+"</h5>"+
                       
-                        "<p class='card-text'>"+Desc[0]+"</p>"+
+                        "<p class='card-text'>"+desc[0]+"</p>"+
                         "<a href='#'' class='btn btn-primary'>Mas informacion</a>"
                         container.innerHTML = contenidoHTML;
                       </script>
@@ -210,9 +208,9 @@
                     <div id="container2" class="card-body">
                       <script>
                         
-                        var contenidoHTML="<h5 class='card-title'>"+miArray[1]+"</h5>"+
+                        var contenidoHTML="<h5 class='card-title'>"+claves[1]+"</h5>"+
                       
-                      "<p class='card-text'>"+Desc[1]+"</p>"+
+                      "<p class='card-text'>"+desc[1]+"</p>"+
                       "<a href='#'' class='btn btn-primary'>Mas informacion</a>"
                       container2.innerHTML = contenidoHTML;
                     </script>
@@ -235,9 +233,9 @@
                       <div id="container3" class="card-body">
                         <script>
                         
-                          var contenidoHTML="<h5 class='card-title'>"+miArray[2]+"</h5>"+
+                          var contenidoHTML="<h5 class='card-title'>"+claves[0]+"</h5>"+
                         
-                        "<p class='card-text'>"+Desc[2]+"</p>"+
+                        "<p class='card-text'>"+desc[0]+"</p>"+
                         "<a href='#'' class='btn btn-primary'>Mas informacion</a>"
                         container3.innerHTML = contenidoHTML;
                       </script>
@@ -252,9 +250,9 @@
                       <div id="container4" class="card-body">
                         <script>
                         
-                          var contenidoHTML="<h5 class='card-title'>"+miArray[3]+"</h5>"+
+                          var contenidoHTML="<h5 class='card-title'>"+claves[0]+"</h5>"+
                         
-                        "<p class='card-text'>"+Desc[3]+"</p>"+
+                        "<p class='card-text'>"+desc[0]+"</p>"+
                         "<a href='#'' class='btn btn-primary'>Mas informacion</a>"
                         container4.innerHTML = contenidoHTML;
                       </script>

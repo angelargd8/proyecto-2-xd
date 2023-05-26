@@ -144,13 +144,13 @@ def buscarRecomendacion():
 
         #Aqui estan todos los datos de los profesores :)
         datosProfesores, profesoresDict = BD.callDescriptionProfessors(nombreProfe)
-        print(profesoresDict)
-        datosProfesores = json.dumps(profesoresDict)
-        print(datosProfesores)
+        #print(profesoresDict)
+        #datosProfesores = json.dumps(profesoresDict)
+        #print(datosProfesores)
         #for datos in datosProfesores:
          #   print(datos)
         
-        return render_template('BuscarRecomendaciones.html',busqueda = True, nombre = nombre, contrasena = contrasena, datosProfesores=datosProfesores, flagProfesores=True)
+        return render_template('BuscarRecomendaciones.html',busqueda = True, nombre = nombre, contrasena = contrasena, datosProfesores=profesoresDict, flagProfesores=True)
 
         ss
         #Por el momento y como esta hecha la base de datos solo manda dos profesores porque solo llega a 2
