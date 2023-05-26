@@ -74,7 +74,6 @@ relationship_id,start_node_id,end_node_id,type,properties
 72,42,9,Da,{}
 73,21,24,Da,{}
 74,23,25,Da,{}
-75,51,34,Da,{}
 76,20,29,Da,{}
 77,47,36,Da,{}
 78,47,33,Da,{}
