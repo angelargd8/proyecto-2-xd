@@ -235,3 +235,6 @@ relationship_id,start_node_id,end_node_id,type,properties
 233,92,4,Tiene,{}
 234,93,12,Tiene,{}
 235,93,5,Tiene,{}
+236,52,76,Tiene,{}
+237,52,74,Tiene,{}
+238,52,75,Tiene,{}
