@@ -32,5 +32,9 @@ Ejecutar el archivo
  ```diff 
 - BaseDeDatos.py
  ```
-
-![Una vez abierto seleccionar el boton que dice Poner en neo4j](https://github.com/angelargd8/proyecto-2-xd/blob/main/Programa%20Recomendaciones/static/img/readme.jpg)
+ Una vez compilado el codigo saldra una pantalla que tiene dos opciones
+ 
+ Apachar el boton que dice importar CSV
+<p align="center" width="100%">
+    <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/Programa%20Recomendaciones/static/img/readme.jpg"> 
+</p>
