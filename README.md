@@ -33,4 +33,4 @@ Ejecutar el archivo
 - BaseDeDatos.py
  ```
 
-![Una vez abierto seleccionar el boton que dice Poner en neo4j](https://github.com/angelargd8/proyecto-2-xd/Programa-Recomendaciones/static/img/readme.jpg)
+![Una vez abierto seleccionar el boton que dice Poner en neo4j](https://github.com/angelargd8/proyecto-2-xd/blob/main/Programa%20Recomendaciones/static/img/readme.jpg)
