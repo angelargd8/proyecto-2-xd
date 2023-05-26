@@ -36,12 +36,20 @@
                 var claves = Object.keys(dict);
                 //console.log(claves)
                 var desc = [];
+                var calificacion = [];
+                var personasc = [];
                 for (var clave in claves) {
                   //console.log(claves[clave])
-                  desc.push(dict[claves[clave]]["Descripcion"])
+                  desc.push(dict[claves[clave]]["Descripcion"]);
+                  calificacion.push(dict[claves[clave]]["Puntuacion"]);
+                  personasc.push(dict[claves[clave]]["Personasc"]);
+
                 }
-                console.log(claves)
-                console.log(desc)
+                console.log(claves);
+                console.log(desc);
+                console.log(calificacion);
+                console.log(personasc);
+
             </script>          
             {% endif %}
     {% if flagError %}
@@ -201,7 +209,9 @@
                         
                         var contenidoHTML="<h5 class='card-title'>"+claves[0]+"</h5>"+
                       
-                        "<p class='card-text'>"+desc[0]+"</p>"
+                        "<p class='card-text'>"+desc[0]
+                        +"<p class='card-text'>La calificacion del profesor: "+calificacion[0]
+                        +"<p class='card-text'>Personas que han calificado: "+personasc[0]+"</p>"
                         container.innerHTML = contenidoHTML;
                       </script>
                     </div>
@@ -219,7 +229,9 @@
                         
                         var contenidoHTML="<h5 class='card-title'>"+claves[1]+"</h5>"+
                       
-                      "<p class='card-text'>"+desc[1]+"</p>"
+                      "<p class='card-text'>"+desc[1]
+                      +"<p class='card-text'>La calificacion del profesor: "+calificacion[1]
+                      +"<p class='card-text'>Personas que han calificado: "+personasc[1]+"</p>"
                       container2.innerHTML = contenidoHTML;
                     </script>
                     </div>
@@ -243,7 +255,9 @@
                         
                           var contenidoHTML="<h5 class='card-title'>"+claves[2]+"</h5>"+
                         
-                        "<p class='card-text'>"+desc[2]+"</p>"
+                        "<p class='card-text'>"+desc[2]
+                        +"<p class='card-text'>La calificacion del profesor: "+calificacion[2]
+                        +"<p class='card-text'>Personas que han calificado: "+personasc[2]+"</p>"
                         container3.innerHTML = contenidoHTML;
                       </script>
                       </div>
@@ -261,7 +275,9 @@
                         
                           var contenidoHTML="<h5 class='card-title'>"+claves[3]+"</h5>"+
                         
-                        "<p class='card-text'>"+desc[3]+"</p>"
+                        "<p class='card-text'>"+desc[3]
+                        +"<p class='card-text'>La calificacion del profesor: "+calificacion[3]
+                        +"<p class='card-text'>Personas que han calificado: "+personasc[3]+"</p>"
                         container4.innerHTML = contenidoHTML;
                       </script>
                       </div>

@@ -272,14 +272,14 @@ def menu():
 #calificacion
 @app.route('/CrearCalificacion', methods=['POST'])
 def CrearCalificacion():
-    #nombre = request.form['nombre']
-    #contrasena = request.form['contrasena']
+    nombre = request.form['nombre']
+    contrasena = request.form['contrasena']
     maestro = request.form["maestro"]
     estrellas = request.form["estrellas"]    
     BD.callCalificarProfesor(maestro,estrellas)
     #nombre = nombre, contrasena = contrasena,
 
-    return render_template('Recomendar.html', flagPrimeraVista=True)
+    return render_template('Recomendar.html', flagPrimeraVista=True, nombre=nombre,contrasena=contrasena)
 
 
 @app.route('/primeraVista', methods=['POST'])
@@ -339,7 +339,7 @@ def Registrar():
 
         if(len(arrCualidades)>=3):
             BD.callCreateNewUser(nombre,correo,contrasena, arrCualidades)
-            return render_template('MenuPrincipal.html', nombre=nombre, contrasena=contrasena)
+            return render_template('index.html', nombre=nombre, contrasena=contrasena)
         else:
             return render_template('PrimerIngreso.html', flagError = True,mensaje="Seleccione por lo menos 3 cualidades")
     else:
