@@ -36,5 +36,41 @@ Ejecutar el archivo
  
  Apachar el boton que dice importar CSV
 <p align="center" width="100%">
-    <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/Programa%20Recomendaciones/static/img/readme.jpg"> 
+    <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/BaseDeDatos2.png"> 
 </p>
+
+Una vez dentro verificar que si se haya creado correctamente, si no repetir proceso.
+
+<p align="center" width="100%">
+    <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/BaseDeDatos2.png"> 
+</p>
+## Tercera Parte: Accionar el servido para la interaccion de python a html
+
+Ejectutar el programa de python con el nombre
+```diff 
+- Main.py
+ ```
+ 
+ Deberia de salir algo parecido a esto
+ 
+ <p align="center" width="100%">
+    <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/BaseDeDatos2.png"> 
+</p>
+ 
+### <ins> Posibles Errores </ins>
+
+#### Main.py no se puede accionar
+
+El error mas comun que sucede a la hora de activar el servidor de python y neo4j es que los dos se crean en el mismo puerto.
+para poder solucionar esto es de la siguiente forma.
+
+#### 1) Apague la BD de neo4j
+#### 2) Una vez apagada inicie el programa de Main.py (Esto deberia de correr sin ningun problema)
+#### 3) Inicie la BD de neo4j (Deberia de aparecer lo que se ve en la imagen
+<p align="center" width="100%">
+    <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/BaseDeDatos2.png"> 
+</p>
+#### 3) Apache el boton azul de abajo a la izquierda
+
+
+
