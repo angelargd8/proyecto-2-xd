@@ -109,7 +109,7 @@ class Neo4JExample:
 #path Diego: C:\\Users\\dgv31\\OneDrive\\Documents\\Universidad\\Semestre 3\\estructura de datos\\Proyecto 2\\Programa Recomendaciones
 #path Francis: C:\\Users\\fagui\\Documents\\Francis\\2023\\UVG\\Tercer semestre\\Algoritmos\\neo4j\\proyecto-2-xd\\Programa Recomendaciones
 
-app = Flask(__name__,template_folder= 'C:\\Users\\USUARIO\\Desktop\\Proyecto2Github\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
+app = Flask(__name__,template_folder= 'C:\\Users\\fagui\\Documents\\Francis\\2023\\UVG\\Tercer semestre\\Algoritmos\\neo4j\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
 BD = Neo4JExample("bolt://localhost:7687", "neo4j", "12345678")
 #neo4j,neo4jj
 
@@ -145,14 +145,14 @@ def buscarRecomendacion():
         #Aqui estan todos los datos de los profesores :)
         datosProfesores, profesoresDict = BD.callDescriptionProfessors(nombreProfe)
         print(profesoresDict)
-        datosProfesores = jsonify(datosProfesores)
-
+        datosProfesores = json.dumps(profesoresDict)
+        print(datosProfesores)
         #for datos in datosProfesores:
          #   print(datos)
         
         return render_template('BuscarRecomendaciones.html',busqueda = True, nombre = nombre, contrasena = contrasena, datosProfesores=datosProfesores, flagProfesores=True)
 
-        
+        ss
         #Por el momento y como esta hecha la base de datos solo manda dos profesores porque solo llega a 2
         #return render_template('BuscarRecomendaciones.html',busqueda = True, nombre = nombre, contrasena = contrasena, profe1 = nombreProfe[0], profe2 = nombreProfe[1])
     else:
