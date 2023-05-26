@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="es">
   <head>
@@ -17,15 +18,36 @@
       <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
     
     <title>MenuPrincipal</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-      var miArray = ['Curtis', 'Magda', 'Roger', 'Gonzalo'];
+     // var miArray = ['Curtis', 'Magda', 'Roger', 'Gonzalo'];
       var Desc = ['Amabre <br> Estricto <br> Domina el tema', 'Amable <br> Domina el tema', 'Amable <br> Domina el tema <br> Empatico', 'Amable <br> Empatico '];
-     // var miArray = ['Curtis', 'Aristondo', 'Roger', 'Gonzalo'];
+      var miArray = ['Curtis', 'Aristondo', 'Roger', 'Gonzalo'];
+     
     </script>
   </head>
   <body>
+    {% if flagProfesores %}
+            <script>
+              window.onload = function() {
+                console.log('{{ datosProfesores|tojson|safe }}')
+                var json_data = ('{{ datosProfesores|tojson|safe }}');  // Convertir la cadena JSON a un objeto JavaScript
+                console.log(json_data);
+                
+                // Ejemplo de acceso a los valores del diccionario
+                //var luisDescripcion = json_data['Luis Mijangos']['Descripcion'];
+                //var mariaPersonasc = json_data['Maria Elisa Duarte']['Personasc'];
+                
+                //console.log('Descripción de Luis Mijangos:', luisDescripcion);
+                //console.log('Personas c de Maria Elisa Duarte:', mariaPersonasc);
+                
+                // Puedes utilizar los valores del diccionario como necesites
+            };
+            </script>          
+            {% endif %}
     {% if flagError %}
     <script>
+      
         // Obtén el mensaje de alerta desde Flask
         // Muestra la alerta
         var mensaje = "{{ mensaje }}"
@@ -33,15 +55,15 @@
 
     </script>
     {% endif %}
-
+      
     {% if busqueda %}
     <script>
       // Obtén el mensaje de alerta desde Flask
       // Muestra la alerta
       var profe1 = "{{ profe1 }}"
       var profe2 = "{{ profe2 }}"
-      alert(profe1);
-      alert(profe2);
+      //alert(profe1);
+      //alert(profe2);
 
     </script>
     {% endif %}
@@ -163,12 +185,7 @@
                 <div class="card" style="width: 25rem;">
                 
                   <ul>
-                    {% if flagProfesores %}
-                      {% for item in datosProfesores %}
-                      <li>{{item}}</li>
-                       {% endfor %}
-                      </ul>
-                    {% endif %}
+                    
 
 
                     <img class="card-img-top" src="{{ url_for('static', filename='img/man.png') }}" alt="Card image cap">
@@ -177,9 +194,9 @@
                         
                         var contenidoHTML="<h5 class='card-title'>"+miArray[0]+"</h5>"+
                       
-                      "<p class='card-text'>"+Desc[0]+"</p>"+
-                      "<a href='#'' class='btn btn-primary'>Mas informacion</a>"
-                      container.innerHTML = contenidoHTML;
+                        "<p class='card-text'>"+Desc[0]+"</p>"+
+                        "<a href='#'' class='btn btn-primary'>Mas informacion</a>"
+                        container.innerHTML = contenidoHTML;
                       </script>
                     </div>
                   </div>              
