@@ -30,15 +30,16 @@
     {% if flagProfesores %}
             <script>
               window.onload = function() {
-                console.log('{{ datosProfesores|tojson|safe }}')
+                //console.log('{{ datosProfesores|tojson|safe }}')
                 var json_data = ('{{ datosProfesores|tojson|safe }}');  // Convertir la cadena JSON a un objeto JavaScript
-                console.log(json_data);
+                var dicc = JSON.parse( json_data );
+                console.log(typeof dicc);
                 
                 // Ejemplo de acceso a los valores del diccionario
-                //var luisDescripcion = json_data['Luis Mijangos']['Descripcion'];
+                //var luisDescripcion = dicc['Ludwing Cano']["Descripcion"];
                 //var mariaPersonasc = json_data['Maria Elisa Duarte']['Personasc'];
                 
-                //console.log('Descripción de Luis Mijangos:', luisDescripcion);
+                console.log('Descripción de Luis Mijangos:', luisDescripcion);
                 //console.log('Personas c de Maria Elisa Duarte:', mariaPersonasc);
                 
                 // Puedes utilizar los valores del diccionario como necesites
