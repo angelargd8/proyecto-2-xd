@@ -61,9 +61,14 @@ Ejectutar el programa de python con el nombre
     <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/serverPython.png"> 
 </p>
  
-### <ins> Posibles Errores </ins>
+ Listo! Ahora solo colocar el puerto que ha salido en main.py en la barra de busqueda de cualquier buscador
+ 
+ 
 
-#### Main.py no se puede accionar
+## Posibles Errores
+ 
+### <ins> Main.py no se puede accionar </ins>
+
 
 El error mas comun que sucede a la hora de activar el servidor de python y neo4j es que los dos se crean en el mismo puerto.
 para poder solucionar esto es de la siguiente forma.
@@ -74,11 +79,11 @@ para poder solucionar esto es de la siguiente forma.
 
 
 <p align="center" width="100%">
-    <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/BaseDeDatos2.png"> 
+    <img width="33%" src="https://github.com/angelargd8/proyecto-2-xd/blob/main/assets/error.png"> 
 </p>
 
 
-#### 3) Apache el boton azul de abajo a la izquierda, esto deberia de cambiar el puerto en el que se despliega el servidor de neo4j.
+#### 3) Apache el boton azul de abajo a la derecha, esto deberia de cambiar el puerto en el que se despliega el servidor de neo4j.
 
 
 
