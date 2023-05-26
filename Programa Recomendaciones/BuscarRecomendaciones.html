@@ -66,6 +66,15 @@
 
     </script>
     {% endif %}
+    {% if flagPrimeraVista %}
+    <form action="/primeraVista"id="primeraVista" method="POST"> 
+      <input type="hidden" name="nombre" value="{{ nombre }}">
+      <input type="hidden" name="contrasena" value="{{ contrasena }}">
+    </form>
+      <script>
+        document.getElementById('primeraVista').submit();
+      </script>
+    {% endif %}
       <!-- ----------------------------------------menu --------------------------------------------->
     
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgb(26, 110, 95);">
@@ -178,29 +187,29 @@
 
         <div class="container">
             <div class="row">
-  
+              
+              {% if profesor1 %}
               <div class="col-12 col-sm-6">
               
                 <div class="card" style="width: 25rem;">
                 
                   <ul>
-                    
-
-
+      
                     <img class="card-img-top" src="{{ url_for('static', filename='img/man.png') }}" alt="Card image cap">
                     <div id ="container"class="card-body">
                       <script>
                         
                         var contenidoHTML="<h5 class='card-title'>"+claves[0]+"</h5>"+
                       
-                        "<p class='card-text'>"+desc[0]+"</p>"+
-                        "<a href='#'' class='btn btn-primary'>Mas informacion</a>"
+                        "<p class='card-text'>"+desc[0]+"</p>"
                         container.innerHTML = contenidoHTML;
                       </script>
                     </div>
                   </div>              
               
-            </div>
+              </div>
+              {% endif %}
+              {% if profesor2 %}
               <div class="col-12 col-sm-6 text-left">
                 
                 <div class="card" style="width: 25rem;">
@@ -210,8 +219,7 @@
                         
                         var contenidoHTML="<h5 class='card-title'>"+claves[1]+"</h5>"+
                       
-                      "<p class='card-text'>"+desc[1]+"</p>"+
-                      "<a href='#'' class='btn btn-primary'>Mas informacion</a>"
+                      "<p class='card-text'>"+desc[1]+"</p>"
                       container2.innerHTML = contenidoHTML;
                     </script>
                     </div>
@@ -221,11 +229,11 @@
   
           
             </div>
-
+            {% endif %}
             <br><br><br><br>
             <!-- -->
             <div class="row">
-  
+                {% if profesor3 %}
                 <div class="col-12 col-sm-6">
                 
                   <div class="card" style="width: 25rem;">
@@ -233,16 +241,17 @@
                       <div id="container3" class="card-body">
                         <script>
                         
-                          var contenidoHTML="<h5 class='card-title'>"+claves[0]+"</h5>"+
+                          var contenidoHTML="<h5 class='card-title'>"+claves[2]+"</h5>"+
                         
-                        "<p class='card-text'>"+desc[0]+"</p>"+
-                        "<a href='#'' class='btn btn-primary'>Mas informacion</a>"
+                        "<p class='card-text'>"+desc[2]+"</p>"
                         container3.innerHTML = contenidoHTML;
                       </script>
                       </div>
                     </div>              
                 
               </div>
+              {% endif %}
+              {% if profesor4 %}
                 <div class="col-12 col-sm-6 text-left">
                   
                   <div class="card" style="width: 25rem;">
@@ -250,16 +259,16 @@
                       <div id="container4" class="card-body">
                         <script>
                         
-                          var contenidoHTML="<h5 class='card-title'>"+claves[0]+"</h5>"+
+                          var contenidoHTML="<h5 class='card-title'>"+claves[3]+"</h5>"+
                         
-                        "<p class='card-text'>"+desc[0]+"</p>"+
-                        "<a href='#'' class='btn btn-primary'>Mas informacion</a>"
+                        "<p class='card-text'>"+desc[3]+"</p>"
                         container4.innerHTML = contenidoHTML;
                       </script>
                       </div>
                     </div>
                   
                 </div>
+                {% endif %}
     
             
               </div>

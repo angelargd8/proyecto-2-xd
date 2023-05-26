@@ -35,7 +35,25 @@ class Neo4JExample:
             entrada, profesoresDict = session.execute_write(self.getDescription,nombreProfesores)
         return entrada, profesoresDict
 
+    def callBestPuntuation(self):
+        with self.driver.session() as session:
+            entrada = session.execute_write(self.getBestProfessor)
+        return entrada
+
     
+    @staticmethod
+    def getBestProfessor(tx):
+        result = tx.run('MATCH (n:Profesor) RETURN n.name, n.Descripcion, n.Personasc, n.Puntuacion ORDER BY n.Puntuacion DESC LIMIT 4')
+        profesoresDict = {}
+        for record in result:
+            profedict = {
+                "Descripcion":record["n.Descripcion"],
+                "Personasc":record["n.Personasc"],
+                "Puntuacion":record["n.Puntuacion"]
+            }
+            profesoresDict[record["n.name"]] = profedict
+        return profesoresDict
+
     @staticmethod
     def getClases(tx):
         result = tx.run('match (n:Clase) return  n.name')
@@ -79,7 +97,7 @@ class Neo4JExample:
 
     @staticmethod
     def profesoresRecomendados(tx,correo,clase):
-        result = tx.run("MATCH (estudiante:Estudiante {correo: '"+correo+"'})-[:Tiene]->(c:Cualidad) WITH estudiante, COLLECT(DISTINCT c) AS estudianteCualidades MATCH (clase:Clase {name: '"+clase+"'})-[:Da]->(profesor:Profesor)-[:Tiene]->(c:Cualidad) WITH estudiante, estudianteCualidades, profesor, COLLECT(DISTINCT c) AS profesorCualidades RETURN estudiante.name AS estudiante, profesor.name AS profesor, SIZE([x IN estudianteCualidades WHERE x IN profesorCualidades]) AS similitud ORDER BY similitud DESC")
+        result = tx.run("MATCH (estudiante:Estudiante {correo: '"+correo+"'})-[:Tiene]->(c:Cualidad) WITH estudiante, COLLECT(DISTINCT c) AS estudianteCualidades MATCH (clase:Clase {name: '"+clase+"'})-[:Da]->(profesor:Profesor)-[:Tiene]->(c:Cualidad) WITH estudiante, estudianteCualidades, profesor, COLLECT(DISTINCT c) AS profesorCualidades RETURN estudiante.name AS estudiante, profesor.name AS profesor, SIZE([x IN estudianteCualidades WHERE x IN profesorCualidades]) AS similitud ORDER BY similitud DESC LIMIT 4")
         arrProfesor = []
         for record in result:
             arrAtributos = []
@@ -109,7 +127,7 @@ class Neo4JExample:
 #path Diego: C:\\Users\\dgv31\\OneDrive\\Documents\\Universidad\\Semestre 3\\estructura de datos\\Proyecto 2\\Programa Recomendaciones
 #path Francis: C:\\Users\\fagui\\Documents\\Francis\\2023\\UVG\\Tercer semestre\\Algoritmos\\neo4j\\proyecto-2-xd\\Programa Recomendaciones
 
-app = Flask(__name__,template_folder= 'C:\\Users\\fagui\\Documents\\Francis\\2023\\UVG\\Tercer semestre\\Algoritmos\\neo4j\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
+app = Flask(__name__,template_folder= 'C:\\Users\\USUARIO\\Desktop\\Proyecto2Github\\proyecto-2-xd\\Programa Recomendaciones') #aqui se empieza a crear la aplicacion
 BD = Neo4JExample("bolt://localhost:7687", "neo4j", "12345678")
 #neo4j,neo4jj
 
@@ -142,6 +160,19 @@ def buscarRecomendacion():
         for x in arrProfesor:
             nombreProfe.append(x[1])
 
+        profesor1 = False
+        profesor2 = False
+        profesor3 = False
+        profesor4 = False
+        for i in range(len(nombreProfe)):
+            if(i == 0):
+                profesor1 = True
+            elif(i==1):
+                profesor2 = True
+            elif(i==2):
+                profesor3 = True
+            elif(i==4):
+                profesor4 = True
         #Aqui estan todos los datos de los profesores :)
         datosProfesores, profesoresDict = BD.callDescriptionProfessors(nombreProfe)
         #print(profesoresDict)
@@ -150,7 +181,7 @@ def buscarRecomendacion():
         #for datos in datosProfesores:
          #   print(datos)
         
-        return render_template('BuscarRecomendaciones.html',busqueda = True, nombre = nombre, contrasena = contrasena, datosProfesores=profesoresDict, flagProfesores=True)
+        return render_template('BuscarRecomendaciones.html',busqueda = True, nombre = nombre, contrasena = contrasena, datosProfesores=profesoresDict, flagProfesores=True, profesor1=profesor1, profesor2=profesor2,profesor3=profesor3,profesor4=profesor4)
 
         ss
         #Por el momento y como esta hecha la base de datos solo manda dos profesores porque solo llega a 2
@@ -158,7 +189,6 @@ def buscarRecomendacion():
     else:
         return render_template('BuscarRecomendaciones.html',flagError = True, mensaje = "La clase que ingreso no existe", nombre = nombre, contrasena = contrasena)
     
-    return "Hola"
 
 
 @app.route('/menu', methods=['POST'])
@@ -168,11 +198,23 @@ def menu():
     return render_template('MenuPrincipal.html', nombre = nombre, contrasena = contrasena)
 #app.jinja_env.globals.update(Redireccion1=Redireccion1)
 #cambiar
+#
+@app.route('//primeraVista', methods=['POST'])
+def primeraVista():
+    nombre = request.form['nombre']
+    contrasena = request.form['contrasena']
+    professorDict = BD.callBestPuntuation()
+    profesor1 = True
+    profesor2 = True
+    profesor3 = True
+    profesor4 = True
+    return render_template('BuscarRecomendaciones.html',nombre = nombre, contrasena = contrasena, datosProfesores=professorDict, flagProfesores=True, profesor1=profesor1, profesor2=profesor2,profesor3=profesor3,profesor4=profesor4)
+
 @app.route('/buscar', methods=['POST'])
 def buscar():
     nombre = request.form['nombre']
     contrasena = request.form['contrasena']
-    return render_template('BuscarRecomendaciones.html', nombre = nombre, contrasena = contrasena)
+    return render_template('BuscarRecomendaciones.html', nombre = nombre, contrasena = contrasena, flagPrimeraVista = True)
 #cambiar
 @app.route('/recomendar', methods=['POST'])
 def recomendar():
