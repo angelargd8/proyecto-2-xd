@@ -48,7 +48,7 @@ La BD tiene que verse de la siguiente forma:
 </p>
 
 
-## Tercera Parte: Accionar el servido para la interaccion de python a html
+## Tercera Parte: Accionar el servidor para la interaccion de python a html
 
 Ejectutar el programa de python con el nombre
 ```diff 
