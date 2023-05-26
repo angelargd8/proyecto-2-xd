@@ -25,6 +25,11 @@ class Neo4JExample:
             entrada = session.execute_write(self.getClases)
         return entrada
     
+    def callNames(self):
+        with self.driver.session() as session:
+            entrada = session.execute_write(self.professorsname)
+        return entrada
+
     def callProfesorRecom(self,correo,clase):
         with self.driver.session() as session:
             entrada = session.execute_write(self.profesoresRecomendados, correo, clase)
@@ -96,6 +101,14 @@ class Neo4JExample:
             tx.run(query)
 
     @staticmethod
+    def professorsname(tx):
+        result = tx.run('match (n:Profesor) return n.name')
+        namesDict = {}
+        for record in result:
+            namesDict[record["n.name"]] = record["n.name"]
+        return namesDict   
+
+    @staticmethod
     def profesoresRecomendados(tx,correo,clase):
         result = tx.run("MATCH (estudiante:Estudiante {correo: '"+correo+"'})-[:Tiene]->(c:Cualidad) WITH estudiante, COLLECT(DISTINCT c) AS estudianteCualidades MATCH (clase:Clase {name: '"+clase+"'})-[:Da]->(profesor:Profesor)-[:Tiene]->(c:Cualidad) WITH estudiante, estudianteCualidades, profesor, COLLECT(DISTINCT c) AS profesorCualidades RETURN estudiante.name AS estudiante, profesor.name AS profesor, SIZE([x IN estudianteCualidades WHERE x IN profesorCualidades]) AS similitud ORDER BY similitud DESC LIMIT 4")
         arrProfesor = []
@@ -141,7 +154,6 @@ def inicio():
 def Form2():
     return render_template('PrimerIngreso.html')
 
-#cambiar
 @app.route('/buscarRecomendacion', methods=['POST'])
 def buscarRecomendacion():
     clase = request.form["clase"]
@@ -190,6 +202,41 @@ def buscarRecomendacion():
         return render_template('BuscarRecomendaciones.html',flagError = True, mensaje = "La clase que ingreso no existe", nombre = nombre, contrasena = contrasena)
     
 
+@app.route('/SoloNombresProfesores', methods=['POST'])
+def SoloNombresProfesores():
+    namesDict = BD.callNames()
+    nombre = request.form['nombre']
+    contrasena = request.form['contrasena']
+    
+    return render_template('Recomendar.html', namesDict = namesDict, nombre = nombre, contrasena = contrasena, primera = True)
+
+@app.route('/NombresProfesores', methods=['POST'])
+def NombresProfesores():
+    clase = request.form["clase"]
+    nombre = request.form['nombre']
+    contrasena = request.form['contrasena']
+    arrClases = BD.CallGetClases()
+    flagExistencia= False
+    for x in arrClases:
+        if(clase.lower() == x.lower()):
+            flagExistencia = True
+            clase = x
+        
+    if(flagExistencia):
+        arrProfesor = BD.callProfesorRecom(nombre, clase)
+        nombreProfe = []
+        for x in arrProfesor:
+            nombreProfe.append(x[1])
+        
+        #Aqui estan todos los datos de los profesores :)
+        datosProfesores, profesoresDict = BD.callDescriptionProfessors(nombreProfe)
+                
+        return render_template('Recomendar.html',busqueda = True, nombre = nombre, contrasena = contrasena, datosProfesores=profesoresDict, flagProfesores=True)
+    else:
+        return render_template('BuscarRecomendaciones.html',flagError = True, mensaje = "La clase que ingreso no existe", nombre = nombre, contrasena = contrasena)
+    
+
+
 
 @app.route('/menu', methods=['POST'])
 def menu():
@@ -220,7 +267,7 @@ def buscar():
 def recomendar():
     nombre = request.form['nombre']
     contrasena = request.form['contrasena']
-    return render_template('Recomendar.html', nombre = nombre, contrasena = contrasena)
+    return render_template('Recomendar.html', nombre = nombre, contrasena = contrasena, flagPrimeraVista=True)
 
 #cambiar
 @app.route('/index', methods=['POST'])
